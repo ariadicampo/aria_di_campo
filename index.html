@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#6b7d62">
+  <meta name="theme-color" content="#CFE1EB">
   <title>Aria di Campo</title>
 
   <style>
@@ -26,71 +26,71 @@
       justify-content: center;
       text-align: center;
       padding: 30px;
-      background: linear-gradient(
-        135deg,
-        #dfe6d8,
-        #f5f1e8
-      );
+      position: relative;
+      overflow: hidden;
+
+      background-image:
+        linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.42)),
+        url("copertina.jpg");
+
+      background-size: cover;
+      background-position: center;
     }
 
     .welcome {
-      max-width: 600px;
+      max-width: 700px;
       width: 100%;
+      color: white;
+      position: relative;
+      z-index: 2;
     }
 
-    .logo-placeholder {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 30px;
+    .logo {
+      width: 145px;
+      height: 145px;
+      object-fit: contain;
       border-radius: 50%;
       background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #777;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding: 8px;
+      margin: 0 auto 28px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.25);
     }
 
     .welcome-text {
       font-size: 18px;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       margin-bottom: 10px;
-      color: #59664f;
       text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.45);
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 54px;
       font-weight: 600;
       margin-bottom: 15px;
-      color: #3f4d39;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.5);
     }
 
     .subtitle {
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 40px;
-      color: #666;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.45);
     }
 
     .start-button {
       display: inline-block;
-      padding: 16px 32px;
+      padding: 16px 36px;
       background: #6b7d62;
       color: white;
       text-decoration: none;
       border-radius: 30px;
       font-size: 17px;
-      transition: 0.2s;
-    }
-
-    .start-button:hover {
-      background: #53634d;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 38px;
+        font-size: 40px;
       }
 
       .welcome-text {
@@ -98,7 +98,12 @@
       }
 
       .subtitle {
-        font-size: 16px;
+        font-size: 17px;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
@@ -110,9 +115,7 @@
 
     <div class="welcome">
 
-      <div class="logo-placeholder">
-        IL TUO LOGO
-      </div>
+      <img src="logo.jpg" alt="Logo Aria di Campo" class="logo">
 
       <div class="welcome-text">
         Benvenuti
@@ -121,7 +124,7 @@
       <h1>Aria di Campo</h1>
 
       <p class="subtitle">
-        La vostra casa nel Borgo di Campo Ligure.
+        La vostra casa nel Borgo di Campo Ligure
       </p>
 
       <a href="#" class="start-button">
