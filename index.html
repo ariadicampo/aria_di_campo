@@ -164,13 +164,147 @@
       font-weight: 600;
     }
 
-    .back-home {
-      display: block;
-      text-align: center;
-      margin-top: 35px;
+    /* CASA */
+
+    #casa {
+      display: none;
+      min-height: 100vh;
+      padding: 35px 20px 60px;
+      background: #f7f5ef;
+    }
+
+    .casa-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 25px;
       color: #3f4d39;
       text-decoration: none;
       font-size: 15px;
+    }
+
+    .casa-title {
+      text-align: center;
+      color: #3f4d39;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      margin-bottom: 30px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      background: #CFE1EB;
+      color: #3f4d39;
+      padding: 9px 13px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .room-card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: left;
+      transition: transform 0.2s;
+    }
+
+    .room-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .room-name {
+      padding: 18px;
+      color: #3f4d39;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* DETTAGLIO AMBIENTE */
+
+    #room-detail {
+      display: none;
+      min-height: 100vh;
+      padding: 35px 20px 60px;
+      background: #f7f5ef;
+    }
+
+    .detail-container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .detail-title {
+      color: #3f4d39;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .photos img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .description {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      line-height: 1.75;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
+
+    .back-casa {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      color: #3f4d39;
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
@@ -192,12 +326,20 @@
         height: 120px;
       }
 
-      .menu-grid {
+      .menu-grid,
+      .rooms-grid,
+      .photos {
         grid-template-columns: 1fr;
       }
 
-      .menu-title {
+      .menu-title,
+      .casa-title,
+      .detail-title {
         font-size: 28px;
+      }
+
+      .photos img {
+        height: 240px;
       }
     }
   </style>
@@ -239,12 +381,14 @@
     <div class="menu-container">
 
       <div class="top-bar">
+
         <select class="language-select">
           <option>🇮🇹 Italiano</option>
           <option>🇬🇧 English</option>
           <option>🇩🇪 Deutsch</option>
           <option>🇫🇷 Français</option>
         </select>
+
       </div>
 
       <h2 class="menu-title">
@@ -253,7 +397,7 @@
 
       <div class="menu-grid">
 
-        <button class="menu-card">
+        <button class="menu-card" onclick="openCasa()">
           <span class="menu-icon">🏡</span>
           <h3>La vostra casa</h3>
         </button>
@@ -295,16 +439,256 @@
 
       </div>
 
-      <a href="#home" class="back-home">
-        ↑ Torna alla Home
+    </div>
+
+  </section>
+
+
+  <!-- LA VOSTRA CASA -->
+
+  <section id="casa">
+
+    <div class="casa-container">
+
+      <a href="#menu" class="back-button" onclick="backToMenu()">
+        ← Torna alla guida
+      </a>
+
+      <h2 class="casa-title">
+        🏡 La vostra casa
+      </h2>
+
+      <div class="intro">
+
+        <p>
+          Nel cuore di Campo Ligure vi aspetta una casa vacanze
+          pensata per farvi sentire come a casa, con il piacere di essere in vacanza.
+        </p>
+
+        <p style="margin-top:15px;">
+          Luminosa, accogliente e curata nei dettagli, può ospitare fino a
+          <strong>6 persone</strong> ed è il punto di partenza ideale per scoprire
+          il fascino dell’entroterra ligure, tra natura, storia e tradizioni.
+        </p>
+
+        <div class="features">
+
+          <span class="feature">✨ Due camere da letto</span>
+
+          <span class="feature">🛋️ Ampio soggiorno con divano letto</span>
+
+          <span class="feature">🍽️ Cucina completamente attrezzata</span>
+
+          <span class="feature">🚿 Bagno con lavatrice</span>
+
+          <span class="feature">🌿 Balcone</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="rooms-grid">
+
+        <button class="room-card"
+          onclick="openRoom(
+            '🚪 L’ingresso',
+            'ingresso-1.jpg',
+            'ingresso-2.jpg',
+            `Appena varcata la soglia di Aria di Campo, vi accoglierà un ambiente luminoso e curato, dove ogni dettaglio è stato pensato per regalarvi un soggiorno piacevole e rilassante.<br><br>Da qui inizia la vostra esperienza tra le atmosfere autentiche di Campo Ligure.<br><br>✨ Benvenuti, la vacanza può cominciare.`
+          )">
+
+          <img src="ingresso-1.jpg" alt="Ingresso">
+
+          <div class="room-name">
+            🚪 Ingresso
+          </div>
+
+        </button>
+
+
+        <button class="room-card"
+          onclick="openRoom(
+            '🛋️ Il soggiorno',
+            'soggiorno-1.jpg',
+            'soggiorno-2.jpg',
+            `Il soggiorno è il cuore di Aria di Campo.<br><br>Uno spazio accogliente dove rilassarsi sul comodo divano letto, guardare un film, leggere un libro o condividere un pranzo e una cena insieme.<br><br>La luce naturale e l’accesso al balcone rendono questo ambiente ancora più piacevole, perfetto per trascorrere momenti di relax dopo una giornata alla scoperta di Campo Ligure.<br><br>Perché le vacanze più belle sono quelle vissute con calma.`
+          )">
+
+          <img src="soggiorno-1.jpg" alt="Soggiorno">
+
+          <div class="room-name">
+            🛋️ Soggiorno
+          </div>
+
+        </button>
+
+
+        <button class="room-card"
+          onclick="openRoom(
+            '🍽️ La cucina',
+            'cucina-1.jpg',
+            'cucina-2.jpg',
+            `La cucina è completamente attrezzata per farvi sentire liberi di vivere la vacanza secondo i vostri ritmi.<br><br>Dal caffè del mattino alla cena in compagnia, troverete tutto il necessario per sentirvi come a casa.<br><br>E quando il tempo lo permette, il balcone con tavolino e sedie diventa il luogo ideale per una colazione all’aria aperta o un aperitivo al tramonto.<br><br>Sono i piccoli momenti a rendere speciale ogni soggiorno.`
+          )">
+
+          <img src="cucina-1.jpg" alt="Cucina">
+
+          <div class="room-name">
+            🍽️ Cucina
+          </div>
+
+        </button>
+
+
+        <button class="room-card"
+          onclick="openRoom(
+            '🛏️ La camera padronale',
+            'camera-1.jpg',
+            'camera-2.jpg',
+            `Dopo una giornata tra i vicoli di Campo Ligure, non c’è niente di meglio che concedersi un riposo rigenerante.<br><br>La camera padronale, con il suo spazioso letto, è pensata per offrirvi comfort, tranquillità e un risveglio piacevole grazie alla luce naturale che entra dalla finestra.<br><br>Perché ogni vacanza merita un sonno all’altezza.`
+          )">
+
+          <img src="camera-1.jpg" alt="Camera padronale">
+
+          <div class="room-name">
+            🛏️ Camera padronale
+          </div>
+
+        </button>
+
+
+        <button class="room-card"
+          onclick="openRoom(
+            '🛏️ La seconda camera',
+            'seconda-camera-1.jpg',
+            'seconda-camera-2.jpg',
+            `Accogliente, luminosa e confortevole.<br><br>La seconda camera, con letto matrimoniale alla francese, è perfetta per una coppia o per chi desidera uno spazio intimo dove rilassarsi.<br><br>Anche qui la luce naturale e la vista contribuiscono a creare un’atmosfera di pace e serenità.<br><br>Un piccolo angolo dove sentirsi davvero in vacanza.`
+          )">
+
+          <img src="seconda-camera-1.jpg" alt="Seconda camera">
+
+          <div class="room-name">
+            🛏️ Seconda camera
+          </div>
+
+        </button>
+
+
+        <button class="room-card"
+          onclick="openRoom(
+            '🚿 Il bagno',
+            'bagno-1.jpg',
+            'bagno-2.jpg',
+            `Comfort e praticità fanno parte dell’esperienza.<br><br>Il bagno è dotato di doccia, lavabo, WC, bidet e lavatrice, per offrirvi tutta la comodità di cui avete bisogno, sia per un weekend che per un soggiorno più lungo.<br><br>Ogni ambiente di Aria di Campo è pensato per farvi sentire a casa.`
+          )">
+
+          <img src="bagno-1.jpg" alt="Bagno">
+
+          <div class="room-name">
+            🚿 Bagno
+          </div>
+
+        </button>
+
+
+        <button class="room-card"
+          onclick="openRoom(
+            '🌿 Il balcone',
+            'balcone-1.jpg',
+            'balcone-2.jpg',
+            `C’è un momento della giornata che amiamo particolarmente: quello in cui ci si siede sul balcone con un caffè, un buon libro o un calice di vino.<br><br>Da qui potrete respirare l’aria di Campo Ligure, rallentare i ritmi e godervi la tranquillità che rende speciale questo borgo.<br><br>A volte basta una vista e un po’ di silenzio per sentirsi davvero in vacanza.`
+          )">
+
+          <img src="balcone-1.jpg" alt="Balcone">
+
+          <div class="room-name">
+            🌿 Balcone
+          </div>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DETTAGLIO -->
+
+  <section id="room-detail">
+
+    <div class="detail-container">
+
+      <a href="#casa" class="back-button" onclick="backToCasa()">
+        ← Torna a La vostra casa
+      </a>
+
+      <h2 class="detail-title" id="detail-title"></h2>
+
+      <div class="photos">
+
+        <img id="photo-one" src="" alt="">
+
+        <img id="photo-two" src="" alt="">
+
+      </div>
+
+      <div class="description" id="description"></div>
+
+      <a href="#casa" class="back-casa" onclick="backToCasa()">
+        ← Torna agli ambienti
       </a>
 
     </div>
 
   </section>
 
-  </body>
-</html>
+
+  <script>
+
+    function hideAll() {
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("casa").style.display = "none";
+      document.getElementById("room-detail").style.display = "none";
+    }
+
+    function openCasa() {
+      hideAll();
+      document.getElementById("casa").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+    function openRoom(title, photo1, photo2, description) {
+
+      hideAll();
+
+      document.getElementById("room-detail").style.display = "block";
+
+      document.getElementById("detail-title").innerHTML = title;
+
+      document.getElementById("photo-one").src = photo1;
+      document.getElementById("photo-two").src = photo2;
+
+      document.getElementById("description").innerHTML = description;
+
+      window.scrollTo(0, 0);
+    }
+
+    function backToCasa() {
+      hideAll();
+      document.getElementById("casa").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+    function backToMenu() {
+      hideAll();
+      document.getElementById("menu").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+  </script>
 
 </body>
 </html>
