@@ -13,17 +13,11 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: Arial, sans-serif;
       background: #f7f5ef;
       color: #333;
     }
-
-    /* HOME */
 
     .hero {
       min-height: 100vh;
@@ -34,11 +28,9 @@
       padding: 30px;
       position: relative;
       overflow: hidden;
-
       background-image:
         linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.42)),
         url("copertina.jpg");
-
       background-size: cover;
       background-position: center;
     }
@@ -87,228 +79,209 @@
       display: inline-block;
       padding: 16px 36px;
       background: #CFE1EB;
-      color: #3f4d39;
+      color: #333;
       text-decoration: none;
       border-radius: 30px;
       font-size: 17px;
+      font-weight: 600;
       box-shadow: 0 5px 20px rgba(0,0,0,0.25);
       cursor: pointer;
+      border: none;
     }
 
-    /* MENU */
-
-    #menu {
-      min-height: 100vh;
-      padding: 35px 20px 50px;
-      background: #f7f5ef;
+    .content {
+      display: none;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
     }
 
-    .menu-container {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .top-bar {
+    .topbar {
       display: flex;
       justify-content: flex-end;
+      gap: 8px;
       margin-bottom: 25px;
+      flex-wrap: wrap;
     }
 
-    .language-select {
-      border: 1px solid #CFE1EB;
+    .language {
+      border: none;
       background: white;
-      padding: 9px 12px;
+      padding: 8px 12px;
       border-radius: 20px;
-      color: #3f4d39;
-      font-size: 14px;
+      cursor: pointer;
+      font-size: 13px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .menu-title {
       text-align: center;
-      color: #3f4d39;
-      font-size: 32px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+    }
+
+    .menu-title h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
     }
 
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
+      margin-bottom: 35px;
     }
 
     .menu-card {
       background: white;
       border: none;
       border-radius: 18px;
-      padding: 25px 18px;
-      text-align: center;
+      padding: 20px;
+      text-align: left;
+      font-size: 17px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
-      color: #3f4d39;
     }
 
     .menu-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
 
-    .menu-icon {
-      font-size: 34px;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .menu-card h3 {
-      font-size: 17px;
-      font-weight: 600;
-    }
-
-    /* CASA */
-
-    #casa {
+    .section {
       display: none;
-      min-height: 100vh;
-      padding: 35px 20px 60px;
-      background: #f7f5ef;
+      background: white;
+      border-radius: 20px;
+      padding: 28px 22px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
     }
 
-    .casa-container {
-      max-width: 900px;
-      margin: auto;
+    .section.active {
+      display: block;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 22px;
+      color: #4d5e49;
+    }
+
+    .section h3 {
+      margin: 25px 0 12px;
+      font-size: 21px;
+      color: #4d5e49;
+    }
+
+    .section p {
+      line-height: 1.7;
+      margin-bottom: 15px;
     }
 
     .back-button {
       display: inline-block;
-      margin-bottom: 25px;
-      color: #3f4d39;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    .casa-title {
-      text-align: center;
-      color: #3f4d39;
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
-
-    .intro {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-      margin-bottom: 30px;
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .feature {
-      background: #CFE1EB;
-      color: #3f4d39;
-      padding: 9px 13px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
-
-    .rooms-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .room-card {
-      background: white;
+      margin-top: 15px;
+      padding: 11px 18px;
       border: none;
-      border-radius: 20px;
-      overflow: hidden;
+      border-radius: 22px;
+      background: #CFE1EB;
+      color: #333;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      text-align: left;
-      transition: transform 0.2s;
-    }
-
-    .room-card:hover {
-      transform: translateY(-3px);
-    }
-
-    .room-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .room-name {
-      padding: 18px;
-      color: #3f4d39;
-      font-size: 18px;
       font-weight: 600;
     }
 
-    /* DETTAGLIO AMBIENTE */
-
-    #room-detail {
-      display: none;
-      min-height: 100vh;
-      padding: 35px 20px 60px;
-      background: #f7f5ef;
+    .ambient-card {
+      margin-bottom: 35px;
     }
 
-    .detail-container {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .detail-title {
-      color: #3f4d39;
-      font-size: 32px;
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .photos {
+    .photo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-bottom: 25px;
+      gap: 12px;
+      margin-bottom: 18px;
     }
 
-    .photos img {
+    .photo-grid img {
       width: 100%;
-      height: 300px;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .description {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      line-height: 1.75;
-      font-size: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    }
-
-    .back-casa {
+      border-radius: 14px;
       display: block;
-      margin-top: 30px;
-      text-align: center;
-      color: #3f4d39;
+    }
+
+    .info-box {
+      background: #f7f5ef;
+      border-radius: 15px;
+      padding: 18px;
+      margin: 15px 0;
+    }
+
+    .rule {
+      margin-bottom: 22px;
+    }
+
+    .rule strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .food-category {
+      margin-top: 28px;
+    }
+
+    .food-card {
+      background: #f7f5ef;
+      border-radius: 17px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .food-logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      background: white;
+      border-radius: 12px;
+      padding: 7px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .food-card h4 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      color: #4d5e49;
+    }
+
+    .food-card p {
+      margin-bottom: 7px;
+      line-height: 1.5;
+    }
+
+    .maps-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 16px;
+      border-radius: 22px;
+      background: #CFE1EB;
+      color: #333;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .empty-section {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #777;
+      font-style: italic;
     }
 
     @media (max-width: 600px) {
-
       h1 {
         font-size: 40px;
       }
@@ -326,20 +299,16 @@
         height: 120px;
       }
 
-      .menu-grid,
-      .rooms-grid,
-      .photos {
+      .menu-grid {
         grid-template-columns: 1fr;
       }
 
-      .menu-title,
-      .casa-title,
-      .detail-title {
-        font-size: 28px;
+      .photo-grid {
+        grid-template-columns: 1fr;
       }
 
-      .photos img {
-        height: 240px;
+      .section {
+        padding: 22px 17px;
       }
     }
   </style>
@@ -347,348 +316,709 @@
 
 <body>
 
-  <!-- HOME -->
+<section class="hero" id="home">
 
-  <section class="hero" id="home">
+  <div class="welcome">
 
-    <div class="welcome">
+    <img src="logo.jpeg"
+         alt="Logo Aria di Campo"
+         class="logo">
 
-      <img src="logo.jpeg" alt="Logo Aria di Campo" class="logo">
-
-      <div class="welcome-text">
-        Benvenuti
-      </div>
-
-      <h1>Aria di Campo</h1>
-
-      <p class="subtitle">
-        La vostra casa nel Borgo di Campo Ligure
-      </p>
-
-      <a href="#menu" class="start-button">
-        Scopri la casa →
-      </a>
-
+    <div class="welcome-text">
+      Benvenuti
     </div>
 
-  </section>
+    <h1>Aria di Campo</h1>
+
+    <p class="subtitle">
+      La vostra casa nel Borgo di Campo Ligure
+    </p>
+
+    <button class="start-button" onclick="openGuide()">
+      Scopri la casa →
+    </button>
+
+  </div>
+
+</section>
 
 
-  <!-- MENU -->
+<main class="content" id="guide">
 
-  <section id="menu">
+  <div class="topbar">
+    <button class="language">🇮🇹 Italiano</button>
+    <button class="language">🇬🇧 English</button>
+    <button class="language">🇩🇪 Deutsch</button>
+    <button class="language">🇫🇷 Français</button>
+  </div>
 
-    <div class="menu-container">
+  <div class="menu-title">
+    <h2>Aria di Campo</h2>
+    <p>Tutto quello che vi serve per vivere al meglio il vostro soggiorno.</p>
+  </div>
 
-      <div class="top-bar">
 
-        <select class="language-select">
-          <option>🇮🇹 Italiano</option>
-          <option>🇬🇧 English</option>
-          <option>🇩🇪 Deutsch</option>
-          <option>🇫🇷 Français</option>
-        </select>
+  <div class="menu-grid">
 
-      </div>
+    <button class="menu-card" onclick="showSection('casa')">
+      🏡 La vostra casa
+    </button>
 
-      <h2 class="menu-title">
-        La vostra guida
-      </h2>
+    <button class="menu-card" onclick="showSection('checkin')">
+      🔑 Check-in & Check-out
+    </button>
 
-      <div class="menu-grid">
+    <button class="menu-card" onclick="showSection('garage')">
+      🚗 Il Garage e Parcheggi pubblici
+    </button>
 
-        <button class="menu-card" onclick="openCasa()">
-          <span class="menu-icon">🏡</span>
-          <h3>La vostra casa</h3>
-        </button>
+    <button class="menu-card" onclick="showSection('regole')">
+      📋 Regole della casa
+    </button>
 
-        <button class="menu-card">
-          <span class="menu-icon">🔑</span>
-          <h3>Check-in & Check-out</h3>
-        </button>
+    <button class="menu-card" onclick="showSection('territorio')">
+      📍 Scopri il territorio
+    </button>
 
-        <button class="menu-card">
-          <span class="menu-icon">🚗</span>
-          <h3>Il Garage e Parcheggi pubblici</h3>
-        </button>
+    <button class="menu-card" onclick="showSection('mangiare')">
+      🍴 Dove mangiare
+    </button>
 
-        <button class="menu-card">
-          <span class="menu-icon">🧺</span>
-          <h3>Come funziona la casa</h3>
-        </button>
+    <button class="menu-card" onclick="showSection('muoversi')">
+      🚗 Come muoversi
+    </button>
 
-        <button class="menu-card">
-          <span class="menu-icon">📍</span>
-          <h3>Scopri il territorio</h3>
-        </button>
+    <button class="menu-card" onclick="showSection('servizi')">
+      🧭 Informazioni e servizi utili
+    </button>
 
-        <button class="menu-card">
-          <span class="menu-icon">🍴</span>
-          <h3>Dove mangiare</h3>
-        </button>
-
-        <button class="menu-card">
-          <span class="menu-icon">🚗</span>
-          <h3>Come muoversi</h3>
-        </button>
-
-        <button class="menu-card">
-          <span class="menu-icon">🚨</span>
-          <h3>Numeri utili</h3>
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
+  </div>
 
 
   <!-- LA VOSTRA CASA -->
 
-  <section id="casa">
+  <section class="section" id="casa">
 
-    <div class="casa-container">
+    <h2>🏡 La vostra casa</h2>
 
-      <a href="#menu" class="back-button" onclick="backToMenu()">
-        ← Torna alla guida
-      </a>
+    <div class="ambient-card">
+      <h3>🚪 L'ingresso</h3>
 
-      <h2 class="casa-title">
-        🏡 La vostra casa
-      </h2>
-
-      <div class="intro">
-
-        <p>
-          Nel cuore di Campo Ligure vi aspetta una casa vacanze
-          pensata per farvi sentire come a casa, con il piacere di essere in vacanza.
-        </p>
-
-        <p style="margin-top:15px;">
-          Luminosa, accogliente e curata nei dettagli, può ospitare fino a
-          <strong>6 persone</strong> ed è il punto di partenza ideale per scoprire
-          il fascino dell’entroterra ligure, tra natura, storia e tradizioni.
-        </p>
-
-        <div class="features">
-
-          <span class="feature">✨ Due camere da letto</span>
-
-          <span class="feature">🛋️ Ampio soggiorno con divano letto</span>
-
-          <span class="feature">🍽️ Cucina completamente attrezzata</span>
-
-          <span class="feature">🚿 Bagno con lavatrice</span>
-
-          <span class="feature">🌿 Balcone</span>
-
-        </div>
-
+      <div class="photo-grid">
+        <img src="ingresso-1.jpg" alt="Ingresso Aria di Campo">
+        <img src="ingresso-2.jpg" alt="Ingresso Aria di Campo">
       </div>
 
-
-      <div class="rooms-grid">
-
-        <button class="room-card"
-          onclick="openRoom(
-            '🚪 L’ingresso',
-            'ingresso-1.jpg',
-            'ingresso-2.jpg',
-            `Appena varcata la soglia di Aria di Campo, vi accoglierà un ambiente luminoso e curato, dove ogni dettaglio è stato pensato per regalarvi un soggiorno piacevole e rilassante.<br><br>Da qui inizia la vostra esperienza tra le atmosfere autentiche di Campo Ligure.<br><br>✨ Benvenuti, la vacanza può cominciare.`
-          )">
-
-          <img src="ingresso-1.jpg" alt="Ingresso">
-
-          <div class="room-name">
-            🚪 Ingresso
-          </div>
-
-        </button>
-
-
-        <button class="room-card"
-          onclick="openRoom(
-            '🛋️ Il soggiorno',
-            'soggiorno-1.jpg',
-            'soggiorno-2.jpg',
-            `Il soggiorno è il cuore di Aria di Campo.<br><br>Uno spazio accogliente dove rilassarsi sul comodo divano letto, guardare un film, leggere un libro o condividere un pranzo e una cena insieme.<br><br>La luce naturale e l’accesso al balcone rendono questo ambiente ancora più piacevole, perfetto per trascorrere momenti di relax dopo una giornata alla scoperta di Campo Ligure.<br><br>Perché le vacanze più belle sono quelle vissute con calma.`
-          )">
-
-          <img src="soggiorno-1.jpg" alt="Soggiorno">
-
-          <div class="room-name">
-            🛋️ Soggiorno
-          </div>
-
-        </button>
-
-
-        <button class="room-card"
-          onclick="openRoom(
-            '🍽️ La cucina',
-            'cucina-1.jpg',
-            'cucina-2.jpg',
-            `La cucina è completamente attrezzata per farvi sentire liberi di vivere la vacanza secondo i vostri ritmi.<br><br>Dal caffè del mattino alla cena in compagnia, troverete tutto il necessario per sentirvi come a casa.<br><br>E quando il tempo lo permette, il balcone con tavolino e sedie diventa il luogo ideale per una colazione all’aria aperta o un aperitivo al tramonto.<br><br>Sono i piccoli momenti a rendere speciale ogni soggiorno.`
-          )">
-
-          <img src="cucina-1.jpg" alt="Cucina">
-
-          <div class="room-name">
-            🍽️ Cucina
-          </div>
-
-        </button>
-
-
-        <button class="room-card"
-          onclick="openRoom(
-            '🛏️ La camera padronale',
-            'camera-1.jpg',
-            'camera-2.jpg',
-            `Dopo una giornata tra i vicoli di Campo Ligure, non c’è niente di meglio che concedersi un riposo rigenerante.<br><br>La camera padronale, con il suo spazioso letto, è pensata per offrirvi comfort, tranquillità e un risveglio piacevole grazie alla luce naturale che entra dalla finestra.<br><br>Perché ogni vacanza merita un sonno all’altezza.`
-          )">
-
-          <img src="camera-1.jpg" alt="Camera padronale">
-
-          <div class="room-name">
-            🛏️ Camera padronale
-          </div>
-
-        </button>
-
-
-        <button class="room-card"
-          onclick="openRoom(
-            '🛏️ La seconda camera',
-            'seconda-camera-1.jpg',
-            'seconda-camera-2.jpg',
-            `Accogliente, luminosa e confortevole.<br><br>La seconda camera, con letto matrimoniale alla francese, è perfetta per una coppia o per chi desidera uno spazio intimo dove rilassarsi.<br><br>Anche qui la luce naturale e la vista contribuiscono a creare un’atmosfera di pace e serenità.<br><br>Un piccolo angolo dove sentirsi davvero in vacanza.`
-          )">
-
-          <img src="seconda-camera-1.jpg" alt="Seconda camera">
-
-          <div class="room-name">
-            🛏️ Seconda camera
-          </div>
-
-        </button>
-
-
-        <button class="room-card"
-          onclick="openRoom(
-            '🚿 Il bagno',
-            'bagno-1.jpg',
-            'bagno-2.jpg',
-            `Comfort e praticità fanno parte dell’esperienza.<br><br>Il bagno è dotato di doccia, lavabo, WC, bidet e lavatrice, per offrirvi tutta la comodità di cui avete bisogno, sia per un weekend che per un soggiorno più lungo.<br><br>Ogni ambiente di Aria di Campo è pensato per farvi sentire a casa.`
-          )">
-
-          <img src="bagno-1.jpg" alt="Bagno">
-
-          <div class="room-name">
-            🚿 Bagno
-          </div>
-
-        </button>
-
-
-        <button class="room-card"
-          onclick="openRoom(
-            '🌿 Il balcone',
-            'balcone-1.jpg',
-            'balcone-2.jpg',
-            `C’è un momento della giornata che amiamo particolarmente: quello in cui ci si siede sul balcone con un caffè, un buon libro o un calice di vino.<br><br>Da qui potrete respirare l’aria di Campo Ligure, rallentare i ritmi e godervi la tranquillità che rende speciale questo borgo.<br><br>A volte basta una vista e un po’ di silenzio per sentirsi davvero in vacanza.`
-          )">
-
-          <img src="balcone-1.jpg" alt="Balcone">
-
-          <div class="room-name">
-            🌿 Balcone
-          </div>
-
-        </button>
-
-      </div>
-
+      <p>
+        Ogni viaggio inizia da un ingresso, ma il nostro vuole farvi sentire subito a casa.
+        Appena varcata la soglia di Aria di Campo, vi accoglierà un ambiente luminoso e
+        curato, dove ogni dettaglio è stato pensato per regalarvi un soggiorno piacevole
+        e rilassante.
+      </p>
     </div>
+
+
+    <div class="ambient-card">
+      <h3>🛋️ Il soggiorno</h3>
+
+      <div class="photo-grid">
+        <img src="soggiorno-1.jpg" alt="Soggiorno Aria di Campo">
+        <img src="soggiorno-2.jpg" alt="Soggiorno Aria di Campo">
+      </div>
+
+      <p>
+        Il soggiorno è il cuore di Aria di Campo.
+        Uno spazio accogliente dove rilassarsi sul comodo divano letto, guardare un film,
+        leggere un libro o condividere un pranzo e una cena insieme.
+        La luce naturale e l'accesso al balcone rendono questo ambiente ancora più piacevole.
+      </p>
+    </div>
+
+
+    <div class="ambient-card">
+      <h3>🍽️ La cucina</h3>
+
+      <div class="photo-grid">
+        <img src="cucina-1.jpg" alt="Cucina Aria di Campo">
+        <img src="cucina-2.jpg" alt="Cucina Aria di Campo">
+      </div>
+
+      <p>
+        La cucina è completamente attrezzata per farvi sentire liberi di vivere la vacanza
+        secondo i vostri ritmi.
+        Dal caffè del mattino alla cena in compagnia, troverete tutto il necessario per
+        sentirvi come a casa.
+      </p>
+
+      <p>
+        E quando il tempo lo permette, il balcone con tavolino e sedie diventa il luogo
+        ideale per una colazione all'aria aperta o un aperitivo al tramonto.
+      </p>
+    </div>
+
+
+    <div class="ambient-card">
+      <h3>🛏️ La camera padronale</h3>
+
+      <div class="photo-grid">
+        <img src="camera-padronale-1.jpg" alt="Camera padronale">
+        <img src="camera-padronale-2.jpg" alt="Camera padronale">
+      </div>
+
+      <p>
+        Dopo una giornata tra i vicoli di Campo Ligure, non c'è niente di meglio che
+        concedersi un riposo rigenerante.
+        La camera padronale, con il suo spazioso letto, è pensata per offrirvi comfort,
+        tranquillità e un risveglio piacevole grazie alla luce naturale che entra dalla finestra.
+      </p>
+    </div>
+
+
+    <div class="ambient-card">
+      <h3>🛏️ La seconda camera</h3>
+
+      <div class="photo-grid">
+        <img src="seconda-camera-1.jpg" alt="Seconda camera">
+        <img src="seconda-camera-2.jpg" alt="Seconda camera">
+      </div>
+
+      <p>
+        Accogliente, luminosa e confortevole.
+        La seconda camera, con letto matrimoniale alla francese, è perfetta per una coppia
+        o per chi desidera uno spazio intimo dove rilassarsi.
+      </p>
+    </div>
+
+
+    <div class="ambient-card">
+      <h3>🚿 Il bagno</h3>
+
+      <div class="photo-grid">
+        <img src="bagno-1.jpg" alt="Bagno Aria di Campo">
+        <img src="bagno-2.jpg" alt="Bagno Aria di Campo">
+      </div>
+
+      <p>
+        Comfort e praticità fanno parte dell'esperienza.
+        Il bagno è dotato di doccia, lavabo, WC, bidet e lavatrice, per offrirvi tutta
+        la comodità di cui avete bisogno, sia per un weekend che per un soggiorno più lungo.
+      </p>
+    </div>
+
+
+    <div class="ambient-card">
+      <h3>🌿 Il balcone</h3>
+
+      <div class="photo-grid">
+        <img src="balcone-1.jpg" alt="Balcone Aria di Campo">
+        <img src="balcone-2.jpg" alt="Balcone Aria di Campo">
+      </div>
+
+      <p>
+        C'è un momento della giornata che amiamo particolarmente: quello in cui ci si siede
+        sul balcone con un caffè, un buon libro o un calice di vino.
+        Da qui potrete respirare l'aria di Campo Ligure, rallentare i ritmi e godervi
+        la tranquillità che rende speciale questo borgo.
+      </p>
+    </div>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
 
   </section>
 
 
-  <!-- DETTAGLIO -->
+  <!-- CHECK-IN -->
 
-  <section id="room-detail">
+  <section class="section" id="checkin">
 
-    <div class="detail-container">
+    <h2>🔑 Check-in & Check-out</h2>
 
-      <a href="#casa" class="back-button" onclick="backToCasa()">
-        ← Torna a La vostra casa
-      </a>
+    <h3>🕐 Check-in</h3>
 
-      <h2 class="detail-title" id="detail-title"></h2>
+    <p>
+      Benvenuti ad <strong>Aria di Campo!</strong>
+    </p>
 
-      <div class="photos">
+    <p>
+      Per rendere il vostro arrivo il più semplice e piacevole possibile, qui trovate
+      tutte le informazioni necessarie per accedere alla casa e iniziare il vostro
+      soggiorno senza pensieri.
+    </p>
 
-        <img id="photo-one" src="" alt="">
-
-        <img id="photo-two" src="" alt="">
-
-      </div>
-
-      <div class="description" id="description"></div>
-
-      <a href="#casa" class="back-casa" onclick="backToCasa()">
-        ← Torna agli ambienti
-      </a>
-
+    <div class="info-box">
+      <strong>Orario di check-in:</strong><br>
+      dalle 14:00 alle 20:00
     </div>
+
+    <p>
+      Se possibile, vi chiediamo gentilmente di comunicare un orario indicativo del vostro arrivo.
+    </p>
+
+    <h3>🔑 Accesso alla casa</h3>
+
+    <p>
+      Al vostro arrivo, per accedere ad Aria di Campo, seguite queste semplici indicazioni:
+    </p>
+
+    <p>
+      Quando arrivate, <strong>suonate all'interno 1</strong> oppure telefonate al
+      <strong>352 041 1284</strong>.
+    </p>
+
+    <h3>🕐 Check-out</h3>
+
+    <p>
+      È arrivato il momento di salutarci, ma prima di partire vi chiediamo di seguire
+      alcune semplici indicazioni per lasciare la casa pronta per i prossimi ospiti.
+    </p>
+
+    <div class="info-box">
+      <strong>Orario di check-out:</strong><br>
+      entro le 10:00
+    </div>
+
+    <p>
+      <strong>Grazie per aver scelto Aria di Campo. ❤️</strong>
+    </p>
+
+    <p>
+      Speriamo che il vostro soggiorno a Campo Ligure sia stato piacevole e che possiate
+      portare con voi un bel ricordo del nostro borgo.
+    </p>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
 
   </section>
 
 
-  <script>
+  <!-- GARAGE -->
 
-    function hideAll() {
-      document.getElementById("menu").style.display = "none";
-      document.getElementById("casa").style.display = "none";
-      document.getElementById("room-detail").style.display = "none";
-    }
+  <section class="section" id="garage">
 
-    function openCasa() {
-      hideAll();
-      document.getElementById("casa").style.display = "block";
-      window.scrollTo(0, 0);
-    }
+    <h2>🚗 Il Garage e Parcheggi pubblici</h2>
 
-    function openRoom(title, photo1, photo2, description) {
+    <h3>🚗 Garage privato</h3>
 
-      hideAll();
+    <p>
+      Per rendere il vostro soggiorno ancora più comodo, Aria di Campo dispone di un garage
+      privato situato proprio sotto l’appartamento, all’interno dello stesso stabile.
+    </p>
 
-      document.getElementById("room-detail").style.display = "block";
+    <div class="info-box">
+      <strong>Costo:</strong> 5 € al giorno.
+    </div>
 
-      document.getElementById("detail-title").innerHTML = title;
+    <h3>🔒 Sicurezza</h3>
 
-      document.getElementById("photo-one").src = photo1;
-      document.getElementById("photo-two").src = photo2;
+    <p>
+      Il garage è dotato di videosorveglianza.
+    </p>
 
-      document.getElementById("description").innerHTML = description;
+    <h3>💳 Pagamento</h3>
 
-      window.scrollTo(0, 0);
-    }
+    <p>
+      Il pagamento del garage deve essere effettuato il primo giorno del soggiorno.
+      È possibile effettuare il pagamento anche tramite bancomat.
+    </p>
 
-    function backToCasa() {
-      hideAll();
-      document.getElementById("casa").style.display = "block";
-      window.scrollTo(0, 0);
-    }
+    <h3>🚪 Apertura della serranda</h3>
 
-    function backToMenu() {
-      hideAll();
-      document.getElementById("menu").style.display = "block";
-      window.scrollTo(0, 0);
-    }
+    <p>
+      La serranda del garage si apre tramite il pulsante situato all’interno del garage.
+    </p>
 
-  </script>
+    <p>
+      È sufficiente premere una sola volta, senza tenere il pulsante premuto,
+      sia per aprire che per chiudere.
+    </p>
+
+    <div class="info-box">
+      <strong>⚠️ Attenzione</strong><br><br>
+      Una volta azionato il pulsante, non passate sotto la serranda durante la chiusura.
+      La serranda è dotata di fotocellule; attendete che sia completamente aperta prima di passare.
+    </div>
+
+    <h3>🅿️ Parcheggio pubblico gratuito</h3>
+
+    <p>
+      Se preferite utilizzare il parcheggio pubblico, ne troverete uno a circa 250 metri
+      da Aria di Campo.
+    </p>
+
+    <p>
+      <strong>Come raggiungerlo:</strong><br>
+      In fondo alla via girate a destra, prendete la prima uscita e subito sulla destra
+      troverete il parcheggio.
+    </p>
+
+    <div class="info-box">
+      <strong>⚠️ Attenzione alle modalità di sosta</strong><br><br>
+
+      ⬆️ <strong>Piano superiore</strong><br>
+      🅿️ Gratuito e libero, senza disco orario.<br><br>
+
+      ⬇️ <strong>Piano strada</strong><br>
+      🕐 Parcheggio a tempo, con disco orario obbligatorio.
+    </div>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+
+  </section>
+
+
+  <!-- REGOLE -->
+
+  <section class="section" id="regole">
+
+    <h2>📋 Regole della casa</h2>
+
+    <div class="rule">
+      <strong>🚭 Divieto di fumo</strong>
+      <p>È vietato fumare all’interno dell’appartamento.</p>
+    </div>
+
+    <div class="rule">
+      <strong>🤫 Rispetto della quiete</strong>
+      <p>
+        Per il benessere di tutti gli ospiti e del vicinato, vi chiediamo di evitare
+        rumori eccessivi e di rispettare il silenzio dalle ore 23:00 alle ore 8:00.
+      </p>
+    </div>
+
+    <div class="rule">
+      <strong>🎉 Feste ed eventi</strong>
+      <p>
+        Non sono consentite feste, eventi o riunioni non autorizzate.
+      </p>
+    </div>
+
+    <div class="rule">
+      <strong>🧹 Cura della casa</strong>
+      <p>Mantenete gli ambienti puliti e ordinati.</p>
+      <p>Prima della partenza, lasciate la cucina pulita e le stoviglie lavate.</p>
+      <p>
+        Vi chiediamo di utilizzare il bidone della spazzatura per conferire correttamente i rifiuti.
+      </p>
+    </div>
+
+    <div class="rule">
+      <strong>🚿 Bagno</strong>
+      <p>
+        Assicuratevi di chiudere sempre bene tutti i rubinetti dopo l’utilizzo.
+      </p>
+      <p>
+        Vi chiediamo gentilmente di non lasciare asciugamani o tappetini all’interno
+        del piatto doccia, così da mantenere il bagno asciutto e in perfette condizioni.
+      </p>
+    </div>
+
+    <div class="rule">
+      <strong>💡 Risparmio energetico</strong>
+      <p>
+        Quando uscite dall’appartamento, spegnete tutte le luci e gli apparecchi elettrici non necessari.
+      </p>
+    </div>
+
+    <div class="rule">
+      <strong>🔒 Sicurezza</strong>
+      <p>
+        Chiudete sempre la porta d’ingresso e le finestre quando lasciate l’alloggio
+        e segnalate tempestivamente eventuali guasti o inconvenienti.
+      </p>
+    </div>
+
+    <div class="rule">
+      <strong>🐾 Animali</strong>
+      <p>
+        Gli animali sono ammessi esclusivamente se autorizzati al momento della prenotazione.
+      </p>
+    </div>
+
+    <p>
+      <strong>
+        Grazie per la vostra collaborazione e vi auguriamo una splendida permanenza! ❤️
+      </strong>
+    </p>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+
+  </section>
+
+
+  <!-- TERRITORIO -->
+
+  <section class="section" id="territorio">
+
+    <h2>📍 Scopri il territorio</h2>
+
+    <p>
+      Campo Ligure e i suoi dintorni offrono tante possibilità per scoprire il fascino
+      dell'entroterra ligure, tra natura, storia e tradizioni.
+    </p>
+
+    <div class="info-box">
+
+      <h3>🏘️ Il borgo</h3>
+      <p>
+        Passeggiate tra i vicoli del centro storico e scoprite le atmosfere autentiche
+        di Campo Ligure.
+      </p>
+
+      <h3>🏰 Storia e cultura</h3>
+      <p>
+        Scoprite il patrimonio storico e culturale del paese.
+      </p>
+
+      <h3>🌳 Natura</h3>
+      <p>
+        I dintorni di Campo Ligure sono ideali per passeggiate, escursioni e momenti immersi nella natura.
+      </p>
+
+    </div>
+
+    <a
+      href="https://comune.campo-ligure.ge.it/vivere-il-comune/"
+      target="_blank"
+      class="maps-button">
+      🌐 Scopri il territorio →
+    </a>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+
+  </section>
+
+
+  <!-- DOVE MANGIARE -->
+
+  <section class="section" id="mangiare">
+
+    <h2>🍴 Dove mangiare</h2>
+
+    <p>
+      A Campo Ligure e nei dintorni troverete diverse possibilità per gustare
+      la cucina locale, mangiare una buona pizza o semplicemente fermarvi
+      per una colazione, un caffè o una pausa.
+    </p>
+
+
+    <div class="food-category">
+
+      <h3>🍝 Ristoranti</h3>
+
+      <div class="food-card">
+        <img src="vigos.jpeg" class="food-logo" alt="vigos 2.0">
+        <h4>vigos 2.0</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=vigos%202.0%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="caccia-ca-bugge.jpeg" class="food-logo" alt="Caccia ca bugge">
+        <h4>Caccia ca bugge</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Caccia%20ca%20bugge%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="osteria-vallebona.jpeg" class="food-logo" alt="Osteria Vallebona">
+        <h4>Osteria Vallebona</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Osteria%20Vallebona%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="food-category">
+
+      <h3>🍕 Pizzerie</h3>
+
+      <div class="food-card">
+        <img src="charles-pizza.jpeg" class="food-logo" alt="Charles Pizza">
+        <h4>Charles Pizza</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Charles%20Pizza%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="taverna-del-falco.jpeg" class="food-logo" alt="Taverna del Falco">
+        <h4>Taverna del Falco</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Taverna%20del%20Falco%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="fregugge.jpeg" class="food-logo" alt="FREGUGGE PIZZA E CUCINA">
+        <h4>FREGUGGE PIZZA E CUCINA</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=FREGUGGE%20PIZZA%20E%20CUCINA%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="rizzo.jpeg" class="food-logo" alt="Rizzo Ristopub">
+        <h4>RIZZO RISTOPUB</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Rizzo%20Ristopub%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="coco-pizza.jpeg" class="food-logo" alt="Coco Pizza">
+        <h4>Coco Pizza — Masone</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Coco%20Pizza%20Masone">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="amarcord.jpeg" class="food-logo" alt="Amarcord">
+        <h4>Amarcord — Masone</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Amarcord%20Masone">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="food-category">
+
+      <h3>☕ Bar</h3>
+
+      <div class="food-card">
+        <img src="palazzetto.jpeg" class="food-logo" alt="Bar Palazzetto">
+        <h4>Bar Palazzetto</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Bar%20Palazzetto%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="bar-moderno.jpeg" class="food-logo" alt="Bar Moderno">
+        <h4>Bar Moderno</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Bar%20Moderno%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="bar-simoni.jpeg" class="food-logo" alt="Bar Simoni">
+        <h4>Bar Simoni</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Bar%20Simoni%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="pasticciamo.jpeg" class="food-logo" alt="Pasticceria Pasticci'Amo">
+        <h4>Pasticceria Pasticci'Amo</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Pasticceria%20PasticciAmo%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+      <div class="food-card">
+        <img src="bar-stazione.jpeg" class="food-logo" alt="Bar Stazione">
+        <h4>Bar Stazione</h4>
+        <a class="maps-button" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Bar%20Stazione%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+
+  </section>
+
+
+  <!-- COME MUOVERSI - VUOTA -->
+
+  <section class="section" id="muoversi">
+
+    <h2>🚗 Come muoversi</h2>
+
+    <div class="empty-section">
+      <p>Informazioni in arrivo.</p>
+    </div>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+
+  </section>
+
+
+  <!-- SERVIZI UTILI - VUOTA -->
+
+  <section class="section" id="servizi">
+
+    <h2>🧭 Informazioni e servizi utili</h2>
+
+    <div class="empty-section">
+      <p>Informazioni in arrivo.</p>
+    </div>
+
+    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+
+  </section>
+
+</main>
+
+
+<script>
+
+  function openGuide() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("guide").style.display = "block";
+    window.scrollTo(0, 0);
+  }
+
+  function showSection(sectionId) {
+
+    document.querySelectorAll(".section").forEach(function(section) {
+      section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+
+    document.querySelector(".menu-grid").style.display = "none";
+    document.querySelector(".menu-title").style.display = "none";
+
+    window.scrollTo(0, 0);
+  }
+
+  function showMenu() {
+
+    document.querySelectorAll(".section").forEach(function(section) {
+      section.classList.remove("active");
+    });
+
+    document.querySelector(".menu-grid").style.display = "grid";
+    document.querySelector(".menu-title").style.display = "block";
+
+    window.scrollTo(0, 0);
+  }
+
+</script>
 
 </body>
 </html>
