@@ -271,14 +271,30 @@
       font-size: 14px;
     }
 
-    .empty-section {
-      min-height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #777;
-      font-style: italic;
+    .service-card {
+      background: #f7f5ef;
+      border-radius: 17px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .service-card h4 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      color: #4d5e49;
+    }
+
+    .service-card p {
+      margin-bottom: 7px;
+      line-height: 1.5;
+    }
+
+    .service-category {
+      margin-top: 28px;
+    }
+
+    .service-category:first-of-type {
+      margin-top: 0;
     }
 
     @media (max-width: 600px) {
@@ -547,7 +563,7 @@
 
     <div class="info-box">
       <strong>Orario di check-in:</strong><br>
-      dalle 14:00 alle 20:00
+      dalle 13:00 alle 19:00
     </div>
 
     <p>
@@ -779,6 +795,7 @@
     <a
       href="https://comune.campo-ligure.ge.it/vivere-il-comune/"
       target="_blank"
+      rel="noopener noreferrer"
       class="maps-button">
       🌐 Scopri il territorio →
     </a>
@@ -808,7 +825,9 @@
       <div class="food-card">
         <img src="vigos.jpeg" class="food-logo" alt="vigos 2.0">
         <h4>vigos 2.0</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 010 731 7151</p>
+        <p>📍 Via Don Minzoni, 46 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=vigos%202.0%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -817,7 +836,9 @@
       <div class="food-card">
         <img src="caccia-ca-bugge.jpeg" class="food-logo" alt="Caccia ca bugge">
         <h4>Caccia ca bugge</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 010 920 999</p>
+        <p>📍 Via Trieste, 32 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Caccia%20ca%20bugge%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -826,7 +847,9 @@
       <div class="food-card">
         <img src="osteria-vallebona.jpeg" class="food-logo" alt="Osteria Vallebona">
         <h4>Osteria Vallebona</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 010 920 230</p>
+        <p>📍 Via Valle Ponzema, 183 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Osteria%20Vallebona%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -842,7 +865,9 @@
       <div class="food-card">
         <img src="charles-pizza.jpeg" class="food-logo" alt="Charles Pizza">
         <h4>Charles Pizza</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 010 472 0443</p>
+        <p>📍 Piazzale Guglielmo Marconi, 2/3/4 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Charles%20Pizza%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -851,7 +876,9 @@
       <div class="food-card">
         <img src="taverna-del-falco.jpeg" class="food-logo" alt="Taverna del Falco">
         <h4>Taverna del Falco</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 392 874 3979</p>
+        <p>📍 Via Luigi Bosco, 25 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Taverna%20del%20Falco%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -860,7 +887,9 @@
       <div class="food-card">
         <img src="fregugge.jpeg" class="food-logo" alt="FREGUGGE PIZZA E CUCINA">
         <h4>FREGUGGE PIZZA E CUCINA</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 010 920 179</p>
+        <p>📍 Piazza Martiri della Benedicta, 2 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=FREGUGGE%20PIZZA%20E%20CUCINA%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -869,16 +898,20 @@
       <div class="food-card">
         <img src="rizzo.jpeg" class="food-logo" alt="Rizzo Ristopub">
         <h4>RIZZO RISTOPUB</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 340 399 0056</p>
+        <p>📍 Via Don Minzoni, 36 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Rizzo%20Ristopub%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
       </div>
 
       <div class="food-card">
-        <img src="coco-pizza.jpeg" class="food-logo" alt="Coco Pizza">
-        <h4>Coco Pizza — Masone</h4>
-        <a class="maps-button" target="_blank"
+        <img src="coco-pizza.jpeg" class="food-logo" alt="Cocò Pizza">
+        <h4>Cocò Pizza — Masone</h4>
+        <p>📞 010 926 9118</p>
+        <p>📍 Via Roma, 24 – Masone</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Coco%20Pizza%20Masone">
           📍 Apri in Google Maps →
         </a>
@@ -887,7 +920,9 @@
       <div class="food-card">
         <img src="amarcord.jpeg" class="food-logo" alt="Amarcord">
         <h4>Amarcord — Masone</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 346 849 1804</p>
+        <p>📍 Via General Cantore, 7 – Masone</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Amarcord%20Masone">
           📍 Apri in Google Maps →
         </a>
@@ -903,7 +938,9 @@
       <div class="food-card">
         <img src="palazzetto.jpeg" class="food-logo" alt="Bar Palazzetto">
         <h4>Bar Palazzetto</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 010 921 9092</p>
+        <p>📍 Via S. Michele, 32 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Bar%20Palazzetto%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -911,8 +948,10 @@
 
       <div class="food-card">
         <img src="bar-moderno.jpeg" class="food-logo" alt="Bar Moderno">
-        <h4>Bar Moderno</h4>
-        <a class="maps-button" target="_blank"
+        <h4>Bar Moderno Di Negretto Giorgia & C. Snc</h4>
+        <p>📞 010 920 849</p>
+        <p>📍 Piazza Vittorio Emanuele, 1 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Bar%20Moderno%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -920,8 +959,10 @@
 
       <div class="food-card">
         <img src="bar-simoni.jpeg" class="food-logo" alt="Bar Simoni">
-        <h4>Bar Simoni</h4>
-        <a class="maps-button" target="_blank"
+        <h4>Bar Simoni da Giulia</h4>
+        <p>📞 010 860 3592</p>
+        <p>📍 Piazza Martiri della Benedicta, 7 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Bar%20Simoni%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -929,8 +970,10 @@
 
       <div class="food-card">
         <img src="pasticciamo.jpeg" class="food-logo" alt="Pasticceria Pasticci'Amo">
-        <h4>Pasticceria Pasticci'Amo</h4>
-        <a class="maps-button" target="_blank"
+        <h4>Pasticceria Pasticci’Amo</h4>
+        <p>📞 351 625 8373</p>
+        <p>📍 Via Don Minzoni, 44 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Pasticceria%20PasticciAmo%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -939,7 +982,9 @@
       <div class="food-card">
         <img src="bar-stazione.jpeg" class="food-logo" alt="Bar Stazione">
         <h4>Bar Stazione</h4>
-        <a class="maps-button" target="_blank"
+        <p>📞 010 921 030</p>
+        <p>📍 Piazzale Guglielmo Marconi, 27 – Campo Ligure</p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
            href="https://www.google.com/maps/search/?api=1&query=Bar%20Stazione%20Campo%20Ligure">
           📍 Apri in Google Maps →
         </a>
@@ -952,14 +997,21 @@
   </section>
 
 
-  <!-- COME MUOVERSI - VUOTA -->
+  <!-- COME MUOVERSI -->
 
   <section class="section" id="muoversi">
 
     <h2>🚗 Come muoversi</h2>
 
-    <div class="empty-section">
-      <p>Informazioni in arrivo.</p>
+    <div class="info-box">
+      <p>
+        In questa sezione troverete informazioni su come spostarvi facilmente
+        da Aria di Campo e raggiungere i principali luoghi di interesse.
+      </p>
+
+      <p>
+        🚉 <strong>Stazione ferroviaria:</strong> circa 450 metri da Aria di Campo.
+      </p>
     </div>
 
     <button class="back-button" onclick="showMenu()">← Torna al menu</button>
@@ -967,15 +1019,193 @@
   </section>
 
 
-  <!-- SERVIZI UTILI - VUOTA -->
+  <!-- INFORMAZIONI E SERVIZI UTILI -->
 
   <section class="section" id="servizi">
 
     <h2>🧭 Informazioni e servizi utili</h2>
 
-    <div class="empty-section">
-      <p>Informazioni in arrivo.</p>
+    <p>
+      Tutto ciò che può esservi utile durante il soggiorno, dai negozi
+      ai servizi del paese.
+    </p>
+
+
+    <!-- SERVIZI QUOTIDIANI -->
+
+    <div class="service-category">
+
+      <h3>🛒 Supermercati / Negozi alimentari</h3>
+
+      <div class="service-card">
+        <h4>🛒 Supermercati e negozi alimentari</h4>
+        <p>
+          Trova supermercati e negozi alimentari nelle vicinanze.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=supermercati%20negozi%20alimentari%20Campo%20Ligure">
+          📍 Cerca in Google Maps →
+        </a>
+      </div>
+
     </div>
+
+
+    <div class="service-category">
+
+      <h3>🥖 Panifici / Pasticcerie</h3>
+
+      <div class="service-card">
+        <h4>🥖 Panifici e pasticcerie</h4>
+        <p>
+          Trova panifici e pasticcerie nelle vicinanze.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=panifici%20pasticcerie%20Campo%20Ligure">
+          📍 Cerca in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="service-category">
+
+      <h3>🚬 Tabaccheria</h3>
+
+      <div class="service-card">
+        <h4>🚬 Tabaccherie</h4>
+        <p>
+          Trova la tabaccheria più vicina.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=tabaccheria%20Campo%20Ligure">
+          📍 Cerca in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="service-category">
+
+      <h3>🧺 Lavanderia / Sartoria</h3>
+
+      <div class="service-card">
+        <h4>🧺 Lavanderie e sartorie</h4>
+        <p>
+          Trova lavanderie e sartorie nelle vicinanze.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=lavanderia%20sartoria%20Campo%20Ligure">
+          📍 Cerca in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="service-category">
+
+      <h3>⛽ Area di servizio</h3>
+
+      <div class="service-card">
+        <h4>⛽ Aree di servizio e distributori</h4>
+        <p>
+          Trova distributori e aree di servizio nelle vicinanze.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=distributore%20benzina%20Campo%20Ligure">
+          📍 Cerca in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="service-category">
+
+      <h3>💍 Filigrana</h3>
+
+      <div class="service-card">
+        <h4>💍 Filigrana di Campo Ligure</h4>
+        <p>
+          Scoprite l'antica tradizione della filigrana, una delle eccellenze
+          artigianali che caratterizzano Campo Ligure.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=filigrana%20Campo%20Ligure">
+          📍 Scopri in Google Maps →
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- SALUTE E ASSISTENZA: SEMPRE IN FONDO -->
+
+    <div class="service-category">
+
+      <h3>🏥 Salute e assistenza</h3>
+
+
+      <div class="service-card">
+        <h4>💊 Farmacie</h4>
+        <p>
+          Trova le farmacie di Campo Ligure e dintorni.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=farmacia%20Campo%20Ligure">
+          📍 Cerca in Google Maps →
+        </a>
+      </div>
+
+
+      <div class="service-card">
+        <h4>🏥 Casa di Comunità</h4>
+        <p>
+          Struttura sanitaria di riferimento per i servizi territoriali.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=Casa%20di%20Comunit%C3%A0%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+
+      <div class="service-card">
+        <h4>🩺 Guardia Medica – Continuità Assistenziale</h4>
+        <p>
+          Per assistenza sanitaria non urgente quando il medico di base non è disponibile.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=Guardia%20Medica%20Campo%20Ligure">
+          📍 Cerca in Google Maps →
+        </a>
+      </div>
+
+
+      <div class="service-card">
+        <h4>🚑 Croce Rossa Italiana – Comitato di Campo Ligure</h4>
+        <p>
+          Per informazioni e servizi della Croce Rossa Italiana – Comitato di Campo Ligure.
+        </p>
+        <a class="maps-button" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&query=Croce%20Rossa%20Italiana%20Campo%20Ligure">
+          📍 Apri in Google Maps →
+        </a>
+      </div>
+
+
+      <div class="service-card">
+        <h4>🚨 NUE – Numero Unico di Emergenza</h4>
+        <p>
+          <strong>112</strong> – Numero Unico Europeo per le emergenze.
+        </p>
+      </div>
+
+    </div>
+
 
     <button class="back-button" onclick="showMenu()">← Torna al menu</button>
 
