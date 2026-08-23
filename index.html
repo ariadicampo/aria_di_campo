@@ -114,6 +114,11 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
+    .language.active {
+      background: #CFE1EB;
+      font-weight: 600;
+    }
+
     .menu-title {
       text-align: center;
       margin-bottom: 25px;
@@ -271,6 +276,25 @@
       font-size: 14px;
     }
 
+    .service-category {
+      margin-top: 28px;
+    }
+
+    .service-item {
+      margin-bottom: 25px;
+    }
+
+    .service-item strong {
+      display: block;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .service-item p {
+      margin-bottom: 6px;
+    }
+
     .empty-section {
       min-height: 180px;
       display: flex;
@@ -279,41 +303,6 @@
       text-align: center;
       color: #777;
       font-style: italic;
-    }
-
-    .service-card {
-      background: #f7f5ef;
-      border-radius: 17px;
-      padding: 18px;
-      margin-bottom: 16px;
-    }
-
-    .service-card h4 {
-      font-size: 19px;
-      margin-bottom: 10px;
-      color: #4d5e49;
-    }
-
-    .service-card p {
-      margin-bottom: 7px;
-      line-height: 1.5;
-    }
-
-    .service-category {
-      margin-top: 28px;
-    }
-
-    .transport-block {
-      margin-bottom: 30px;
-    }
-
-    .transport-block h3 {
-      margin-bottom: 10px;
-    }
-
-    .destination-list {
-      line-height: 1.9;
-      margin-bottom: 15px;
     }
 
     @media (max-width: 600px) {
@@ -359,17 +348,17 @@
          alt="Logo Aria di Campo"
          class="logo">
 
-    <div class="welcome-text">
+    <div class="welcome-text" data-i18n="welcome">
       Benvenuti
     </div>
 
     <h1>Aria di Campo</h1>
 
-    <p class="subtitle">
+    <p class="subtitle" data-i18n="subtitle">
       La vostra casa nel Borgo di Campo Ligure
     </p>
 
-    <button class="start-button" onclick="openGuide()">
+    <button class="start-button" onclick="openGuide()" data-i18n="discover">
       Scopri la casa →
     </button>
 
@@ -381,49 +370,51 @@
 <main class="content" id="guide">
 
   <div class="topbar">
-    <button class="language">🇮🇹 Italiano</button>
-    <button class="language">🇬🇧 English</button>
-    <button class="language">🇩🇪 Deutsch</button>
-    <button class="language">🇫🇷 Français</button>
+    <button class="language active" onclick="setLanguage('it')">🇮🇹 Italiano</button>
+    <button class="language" onclick="setLanguage('en')">🇬🇧 English</button>
+    <button class="language" onclick="setLanguage('de')">🇩🇪 Deutsch</button>
+    <button class="language" onclick="setLanguage('fr')">🇫🇷 Français</button>
   </div>
 
   <div class="menu-title">
     <h2>Aria di Campo</h2>
-    <p>Tutto quello che vi serve per vivere al meglio il vostro soggiorno.</p>
+    <p data-i18n="menuIntro">
+      Tutto quello che vi serve per vivere al meglio il vostro soggiorno.
+    </p>
   </div>
 
 
   <div class="menu-grid">
 
-    <button class="menu-card" onclick="showSection('casa')">
+    <button class="menu-card" onclick="showSection('casa')" data-i18n="menuCasa">
       🏡 La vostra casa
     </button>
 
-    <button class="menu-card" onclick="showSection('checkin')">
+    <button class="menu-card" onclick="showSection('checkin')" data-i18n="menuCheckin">
       🔑 Check-in & Check-out
     </button>
 
-    <button class="menu-card" onclick="showSection('garage')">
+    <button class="menu-card" onclick="showSection('garage')" data-i18n="menuGarage">
       🚗 Il Garage e Parcheggi pubblici
     </button>
 
-    <button class="menu-card" onclick="showSection('regole')">
+    <button class="menu-card" onclick="showSection('regole')" data-i18n="menuRegole">
       📋 Regole della casa
     </button>
 
-    <button class="menu-card" onclick="showSection('territorio')">
+    <button class="menu-card" onclick="showSection('territorio')" data-i18n="menuTerritorio">
       📍 Scopri il territorio
     </button>
 
-    <button class="menu-card" onclick="showSection('mangiare')">
+    <button class="menu-card" onclick="showSection('mangiare')" data-i18n="menuMangiare">
       🍴 Dove mangiare
     </button>
 
-    <button class="menu-card" onclick="showSection('muoversi')">
+    <button class="menu-card" onclick="showSection('muoversi')" data-i18n="menuMuoversi">
       🚗 Come muoversi
     </button>
 
-    <button class="menu-card" onclick="showSection('servizi')">
+    <button class="menu-card" onclick="showSection('servizi')" data-i18n="menuServizi">
       🧭 Informazioni e servizi utili
     </button>
 
@@ -434,17 +425,17 @@
 
   <section class="section" id="casa">
 
-    <h2>🏡 La vostra casa</h2>
+    <h2 data-i18n="casaTitle">🏡 La vostra casa</h2>
 
     <div class="ambient-card">
-      <h3>🚪 L'ingresso</h3>
+      <h3 data-i18n="ingressoTitle">🚪 L'ingresso</h3>
 
       <div class="photo-grid">
         <img src="ingresso-1.jpg" alt="Ingresso Aria di Campo">
         <img src="ingresso-2.jpg" alt="Ingresso Aria di Campo">
       </div>
 
-      <p>
+      <p data-i18n="ingressoText">
         Ogni viaggio inizia da un ingresso, ma il nostro vuole farvi sentire subito a casa.
         Appena varcata la soglia di Aria di Campo, vi accoglierà un ambiente luminoso e
         curato, dove ogni dettaglio è stato pensato per regalarvi un soggiorno piacevole
@@ -454,14 +445,14 @@
 
 
     <div class="ambient-card">
-      <h3>🛋️ Il soggiorno</h3>
+      <h3 data-i18n="soggiornoTitle">🛋️ Il soggiorno</h3>
 
       <div class="photo-grid">
         <img src="soggiorno-1.jpg" alt="Soggiorno Aria di Campo">
         <img src="soggiorno-2.jpg" alt="Soggiorno Aria di Campo">
       </div>
 
-      <p>
+      <p data-i18n="soggiornoText">
         Il soggiorno è il cuore di Aria di Campo.
         Uno spazio accogliente dove rilassarsi sul comodo divano letto, guardare un film,
         leggere un libro o condividere un pranzo e una cena insieme.
@@ -471,21 +462,21 @@
 
 
     <div class="ambient-card">
-      <h3>🍽️ La cucina</h3>
+      <h3 data-i18n="cucinaTitle">🍽️ La cucina</h3>
 
       <div class="photo-grid">
         <img src="cucina-1.jpg" alt="Cucina Aria di Campo">
         <img src="cucina-2.jpg" alt="Cucina Aria di Campo">
       </div>
 
-      <p>
+      <p data-i18n="cucinaText1">
         La cucina è completamente attrezzata per farvi sentire liberi di vivere la vacanza
         secondo i vostri ritmi.
         Dal caffè del mattino alla cena in compagnia, troverete tutto il necessario per
         sentirvi come a casa.
       </p>
 
-      <p>
+      <p data-i18n="cucinaText2">
         E quando il tempo lo permette, il balcone con tavolino e sedie diventa il luogo
         ideale per una colazione all'aria aperta o un aperitivo al tramonto.
       </p>
@@ -493,14 +484,14 @@
 
 
     <div class="ambient-card">
-      <h3>🛏️ La camera padronale</h3>
+      <h3 data-i18n="cameraTitle">🛏️ La camera padronale</h3>
 
       <div class="photo-grid">
         <img src="camera-padronale-1.jpg" alt="Camera padronale">
         <img src="camera-padronale-2.jpg" alt="Camera padronale">
       </div>
 
-      <p>
+      <p data-i18n="cameraText">
         Dopo una giornata tra i vicoli di Campo Ligure, non c'è niente di meglio che
         concedersi un riposo rigenerante.
         La camera padronale, con il suo spazioso letto, è pensata per offrirvi comfort,
@@ -510,14 +501,14 @@
 
 
     <div class="ambient-card">
-      <h3>🛏️ La seconda camera</h3>
+      <h3 data-i18n="secondaCameraTitle">🛏️ La seconda camera</h3>
 
       <div class="photo-grid">
         <img src="seconda-camera-1.jpg" alt="Seconda camera">
         <img src="seconda-camera-2.jpg" alt="Seconda camera">
       </div>
 
-      <p>
+      <p data-i18n="secondaCameraText">
         Accogliente, luminosa e confortevole.
         La seconda camera, con letto matrimoniale alla francese, è perfetta per una coppia
         o per chi desidera uno spazio intimo dove rilassarsi.
@@ -526,14 +517,14 @@
 
 
     <div class="ambient-card">
-      <h3>🚿 Il bagno</h3>
+      <h3 data-i18n="bagnoTitle">🚿 Il bagno</h3>
 
       <div class="photo-grid">
         <img src="bagno-1.jpg" alt="Bagno Aria di Campo">
         <img src="bagno-2.jpg" alt="Bagno Aria di Campo">
       </div>
 
-      <p>
+      <p data-i18n="bagnoText">
         Comfort e praticità fanno parte dell'esperienza.
         Il bagno è dotato di doccia, lavabo, WC, bidet e lavatrice, per offrirvi tutta
         la comodità di cui avete bisogno, sia per un weekend che per un soggiorno più lungo.
@@ -542,14 +533,14 @@
 
 
     <div class="ambient-card">
-      <h3>🌿 Il balcone</h3>
+      <h3 data-i18n="balconeTitle">🌿 Il balcone</h3>
 
       <div class="photo-grid">
         <img src="balcone-1.jpg" alt="Balcone Aria di Campo">
         <img src="balcone-2.jpg" alt="Balcone Aria di Campo">
       </div>
 
-      <p>
+      <p data-i18n="balconeText">
         C'è un momento della giornata che amiamo particolarmente: quello in cui ci si siede
         sul balcone con un caffè, un buon libro o un calice di vino.
         Da qui potrete respirare l'aria di Campo Ligure, rallentare i ritmi e godervi
@@ -557,7 +548,9 @@
       </p>
     </div>
 
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
 
@@ -566,62 +559,60 @@
 
   <section class="section" id="checkin">
 
-    <h2>🔑 Check-in & Check-out</h2>
+    <h2 data-i18n="checkinTitle">🔑 Check-in & Check-out</h2>
 
-    <h3>🕐 Check-in</h3>
+    <h3 data-i18n="checkinHeading">🕐 Check-in</h3>
 
-    <p>
+    <p data-i18n="checkinWelcome">
       Benvenuti ad <strong>Aria di Campo!</strong>
     </p>
 
-    <p>
+    <p data-i18n="checkinIntro">
       Per rendere il vostro arrivo il più semplice e piacevole possibile, qui trovate
       tutte le informazioni necessarie per accedere alla casa e iniziare il vostro
       soggiorno senza pensieri.
     </p>
 
     <div class="info-box">
-      <strong>Orario di check-in:</strong><br>
-      dalle 13:00 alle 19:00
+      <strong data-i18n="checkinTimeLabel">Orario di check-in:</strong><br>
+      <span data-i18n="checkinTime">dalle 13:00 alle 19:00</span>
     </div>
 
-    <p>
+    <p data-i18n="arrivalTime">
       Se possibile, vi chiediamo gentilmente di comunicare un orario indicativo del vostro arrivo.
     </p>
 
-    <h3>🔑 Accesso alla casa</h3>
+    <h3 data-i18n="accessTitle">🔑 Accesso alla casa</h3>
 
-    <p>
-      Al vostro arrivo, per accedere ad Aria di Campo, seguite queste semplici indicazioni:
-    </p>
-
-    <p>
+    <p data-i18n="accessText">
       Quando arrivate, <strong>suonate all'interno 1</strong> oppure telefonate al
       <strong>352 041 1284</strong>.
     </p>
 
-    <h3>🕐 Check-out</h3>
+    <h3 data-i18n="checkoutHeading">🕐 Check-out</h3>
 
-    <p>
+    <p data-i18n="checkoutText">
       È arrivato il momento di salutarci, ma prima di partire vi chiediamo di seguire
       alcune semplici indicazioni per lasciare la casa pronta per i prossimi ospiti.
     </p>
 
     <div class="info-box">
-      <strong>Orario di check-out:</strong><br>
-      entro le 10:00
+      <strong data-i18n="checkoutTimeLabel">Orario di check-out:</strong><br>
+      <span data-i18n="checkoutTime">entro le 10:00</span>
     </div>
 
-    <p>
+    <p data-i18n="thanks">
       <strong>Grazie per aver scelto Aria di Campo. ❤️</strong>
     </p>
 
-    <p>
+    <p data-i18n="goodbye">
       Speriamo che il vostro soggiorno a Campo Ligure sia stato piacevole e che possiate
       portare con voi un bel ricordo del nostro borgo.
     </p>
 
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
 
@@ -630,73 +621,77 @@
 
   <section class="section" id="garage">
 
-    <h2>🚗 Il Garage e Parcheggi pubblici</h2>
+    <h2 data-i18n="garageTitle">🚗 Il Garage e Parcheggi pubblici</h2>
 
-    <h3>🚗 Garage privato</h3>
+    <h3 data-i18n="garagePrivateTitle">🚗 Garage privato</h3>
 
-    <p>
+    <p data-i18n="garagePrivateText">
       Per rendere il vostro soggiorno ancora più comodo, Aria di Campo dispone di un garage
       privato situato proprio sotto l’appartamento, all’interno dello stesso stabile.
     </p>
 
     <div class="info-box">
-      <strong>Costo:</strong> 5 € al giorno.
+      <strong data-i18n="garageCost">Costo: 5 € al giorno.</strong>
     </div>
 
-    <h3>🔒 Sicurezza</h3>
+    <h3 data-i18n="securityTitle">🔒 Sicurezza</h3>
 
-    <p>
+    <p data-i18n="securityText">
       Il garage è dotato di videosorveglianza.
     </p>
 
-    <h3>💳 Pagamento</h3>
+    <h3 data-i18n="paymentTitle">💳 Pagamento</h3>
 
-    <p>
+    <p data-i18n="paymentText">
       Il pagamento del garage deve essere effettuato il primo giorno del soggiorno.
       È possibile effettuare il pagamento anche tramite bancomat.
     </p>
 
-    <h3>🚪 Apertura della serranda</h3>
+    <h3 data-i18n="doorTitle">🚪 Apertura della serranda</h3>
 
-    <p>
+    <p data-i18n="doorText1">
       La serranda del garage si apre tramite il pulsante situato all’interno del garage.
     </p>
 
-    <p>
+    <p data-i18n="doorText2">
       È sufficiente premere una sola volta, senza tenere il pulsante premuto,
       sia per aprire che per chiudere.
     </p>
 
     <div class="info-box">
-      <strong>⚠️ Attenzione</strong><br><br>
-      Una volta azionato il pulsante, non passate sotto la serranda durante la chiusura.
-      La serranda è dotata di fotocellule; attendete che sia completamente aperta prima di passare.
+      <strong data-i18n="attention">⚠️ Attenzione</strong><br><br>
+      <span data-i18n="doorWarning">
+        Una volta azionato il pulsante, non passate sotto la serranda durante la chiusura.
+        La serranda è dotata di fotocellule; attendete che sia completamente aperta prima di passare.
+      </span>
     </div>
 
-    <h3>🅿️ Parcheggio pubblico gratuito</h3>
+    <h3 data-i18n="publicParkingTitle">🅿️ Parcheggio pubblico gratuito</h3>
 
-    <p>
+    <p data-i18n="publicParkingText">
       Se preferite utilizzare il parcheggio pubblico, ne troverete uno a circa 250 metri
       da Aria di Campo.
     </p>
 
-    <p>
+    <p data-i18n="publicParkingHow">
       <strong>Come raggiungerlo:</strong><br>
       In fondo alla via girate a destra, prendete la prima uscita e subito sulla destra
       troverete il parcheggio.
     </p>
 
     <div class="info-box">
-      <strong>⚠️ Attenzione alle modalità di sosta</strong><br><br>
+      <strong data-i18n="parkingAttention">⚠️ Attenzione alle modalità di sosta</strong><br><br>
 
-      ⬆️ <strong>Piano superiore</strong><br>
-      🅿️ Gratuito e libero, senza disco orario.<br><br>
+      ⬆️ <strong data-i18n="upperFloor">Piano superiore</strong><br>
+      <span data-i18n="upperFloorText">🅿️ Gratuito e libero, senza disco orario.</span><br><br>
 
-      ⬇️ <strong>Piano strada</strong><br>
-      🕐 Parcheggio a tempo, con disco orario obbligatorio.
+      ⬇️ <strong data-i18n="streetLevel">Piano strada</strong><br>
+      <span data-i18n="streetLevelText">🕐 Parcheggio a tempo, con disco orario obbligatorio.</span>
     </div>
 
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
 
@@ -705,77 +700,79 @@
 
   <section class="section" id="regole">
 
-    <h2>📋 Regole della casa</h2>
+    <h2 data-i18n="rulesTitle">📋 Regole della casa</h2>
 
     <div class="rule">
-      <strong>🚭 Divieto di fumo</strong>
-      <p>È vietato fumare all’interno dell’appartamento.</p>
+      <strong data-i18n="noSmokingTitle">🚭 Divieto di fumo</strong>
+      <p data-i18n="noSmokingText">
+        È vietato fumare all’interno dell’appartamento.
+      </p>
     </div>
 
     <div class="rule">
-      <strong>🤫 Rispetto della quiete</strong>
-      <p>
+      <strong data-i18n="quietTitle">🤫 Rispetto della quiete</strong>
+      <p data-i18n="quietText">
         Per il benessere di tutti gli ospiti e del vicinato, vi chiediamo di evitare
         rumori eccessivi e di rispettare il silenzio dalle ore 23:00 alle ore 8:00.
       </p>
     </div>
 
     <div class="rule">
-      <strong>🎉 Feste ed eventi</strong>
-      <p>
+      <strong data-i18n="partiesTitle">🎉 Feste ed eventi</strong>
+      <p data-i18n="partiesText">
         Non sono consentite feste, eventi o riunioni non autorizzate.
       </p>
     </div>
 
     <div class="rule">
-      <strong>🧹 Cura della casa</strong>
-      <p>Mantenete gli ambienti puliti e ordinati.</p>
-      <p>Prima della partenza, lasciate la cucina pulita e le stoviglie lavate.</p>
-      <p>
+      <strong data-i18n="careTitle">🧹 Cura della casa</strong>
+      <p data-i18n="careText1">Mantenete gli ambienti puliti e ordinati.</p>
+      <p data-i18n="careText2">Prima della partenza, lasciate la cucina pulita e le stoviglie lavate.</p>
+      <p data-i18n="careText3">
         Vi chiediamo di utilizzare il bidone della spazzatura per conferire correttamente i rifiuti.
       </p>
     </div>
 
     <div class="rule">
-      <strong>🚿 Bagno</strong>
-      <p>
+      <strong data-i18n="bathroomRulesTitle">🚿 Bagno</strong>
+      <p data-i18n="bathroomRulesText1">
         Assicuratevi di chiudere sempre bene tutti i rubinetti dopo l’utilizzo.
       </p>
-      <p>
+      <p data-i18n="bathroomRulesText2">
         Vi chiediamo gentilmente di non lasciare asciugamani o tappetini all’interno
         del piatto doccia, così da mantenere il bagno asciutto e in perfette condizioni.
       </p>
     </div>
 
     <div class="rule">
-      <strong>💡 Risparmio energetico</strong>
-      <p>
+      <strong data-i18n="energyTitle">💡 Risparmio energetico</strong>
+      <p data-i18n="energyText">
         Quando uscite dall’appartamento, spegnete tutte le luci e gli apparecchi elettrici non necessari.
       </p>
     </div>
 
     <div class="rule">
-      <strong>🔒 Sicurezza</strong>
-      <p>
+      <strong data-i18n="safetyTitle">🔒 Sicurezza</strong>
+      <p data-i18n="safetyText">
         Chiudete sempre la porta d’ingresso e le finestre quando lasciate l’alloggio
         e segnalate tempestivamente eventuali guasti o inconvenienti.
       </p>
     </div>
 
     <div class="rule">
-      <strong>🐾 Animali</strong>
-      <p>
+      <strong data-i18n="petsTitle">🐾 Animali</strong>
+      <p data-i18n="petsText">
         Gli animali sono ammessi esclusivamente se autorizzati al momento della prenotazione.
       </p>
     </div>
 
-    <p>
-      <strong>
-        Grazie per la vostra collaborazione e vi auguriamo una splendida permanenza! ❤️
-      </strong>
+    <p data-i18n="rulesThanks">
+      <strong>Grazie per la vostra collaborazione e vi auguriamo una splendida permanenza! ❤️</strong>
     </p>
 
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
 
@@ -784,28 +781,28 @@
 
   <section class="section" id="territorio">
 
-    <h2>📍 Scopri il territorio</h2>
+    <h2 data-i18n="territoryTitle">📍 Scopri il territorio</h2>
 
-    <p>
+    <p data-i18n="territoryIntro">
       Campo Ligure e i suoi dintorni offrono tante possibilità per scoprire il fascino
       dell'entroterra ligure, tra natura, storia e tradizioni.
     </p>
 
     <div class="info-box">
 
-      <h3>🏘️ Il borgo</h3>
-      <p>
+      <h3 data-i18n="villageTitle">🏘️ Il borgo</h3>
+      <p data-i18n="villageText">
         Passeggiate tra i vicoli del centro storico e scoprite le atmosfere autentiche
         di Campo Ligure.
       </p>
 
-      <h3>🏰 Storia e cultura</h3>
-      <p>
+      <h3 data-i18n="historyTitle">🏰 Storia e cultura</h3>
+      <p data-i18n="historyText">
         Scoprite il patrimonio storico e culturale del paese.
       </p>
 
-      <h3>🌳 Natura</h3>
-      <p>
+      <h3 data-i18n="natureTitle">🌳 Natura</h3>
+      <p data-i18n="natureText">
         I dintorni di Campo Ligure sono ideali per passeggiate, escursioni e momenti immersi nella natura.
       </p>
 
@@ -814,11 +811,15 @@
     <a
       href="https://comune.campo-ligure.ge.it/vivere-il-comune/"
       target="_blank"
-      class="maps-button">
+      rel="noopener"
+      class="maps-button"
+      data-i18n="territoryButton">
       🌐 Scopri il territorio →
     </a>
 
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
 
@@ -827,9 +828,9 @@
 
   <section class="section" id="mangiare">
 
-    <h2>🍴 Dove mangiare</h2>
+    <h2 data-i18n="foodTitle">🍴 Dove mangiare</h2>
 
-    <p>
+    <p data-i18n="foodIntro">
       A Campo Ligure e nei dintorni troverete diverse possibilità per gustare
       la cucina locale, mangiare una buona pizza o semplicemente fermarvi
       per una colazione, un caffè o una pausa.
@@ -838,16 +839,17 @@
 
     <div class="food-category">
 
-      <h3>🍝 Ristoranti</h3>
+      <h3 data-i18n="restaurantsTitle">🍝 Ristoranti</h3>
 
       <div class="food-card">
         <img src="vigos.jpeg" class="food-logo" alt="vigos 2.0">
         <h4>vigos 2.0</h4>
         <p>📞 010 731 7151</p>
         <p>📍 Via Don Minzoni, 46 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=vigos%202.0%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=vigos%202.0%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -856,9 +858,10 @@
         <h4>Caccia ca bugge</h4>
         <p>📞 010 920 999</p>
         <p>📍 Via Trieste, 32 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Caccia%20ca%20bugge%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Caccia%20ca%20bugge%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -867,9 +870,10 @@
         <h4>Osteria Vallebona</h4>
         <p>📞 010 920 230</p>
         <p>📍 Via Valle Ponzema, 183 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Osteria%20Vallebona%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Osteria%20Vallebona%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -878,16 +882,17 @@
 
     <div class="food-category">
 
-      <h3>🍕 Pizzerie</h3>
+      <h3 data-i18n="pizzeriasTitle">🍕 Pizzerie</h3>
 
       <div class="food-card">
         <img src="charles-pizza.jpeg" class="food-logo" alt="Charles Pizza">
         <h4>Charles Pizza</h4>
         <p>📞 010 472 0443</p>
         <p>📍 Piazzale Guglielmo Marconi, 2/3/4 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Charles%20Pizza%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Charles%20Pizza%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -896,9 +901,10 @@
         <h4>Taverna del Falco</h4>
         <p>📞 392 874 3979</p>
         <p>📍 Via Luigi Bosco, 25 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Taverna%20del%20Falco%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Taverna%20del%20Falco%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -907,9 +913,10 @@
         <h4>FREGUGGE PIZZA E CUCINA</h4>
         <p>📞 010 920 179</p>
         <p>📍 Piazza Martiri della Benedicta, 2 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=FREGUGGE%20PIZZA%20E%20CUCINA%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=FREGUGGE%20PIZZA%20E%20CUCINA%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -918,9 +925,10 @@
         <h4>RIZZO RISTOPUB</h4>
         <p>📞 340 399 0056</p>
         <p>📍 Via Don Minzoni, 36 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Rizzo%20Ristopub%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Rizzo%20Ristopub%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -929,9 +937,10 @@
         <h4>Cocò Pizza — Masone</h4>
         <p>📞 010 926 9118</p>
         <p>📍 Via Roma, 24 – Masone</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Coco%20Pizza%20Masone">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Coco%20Pizza%20Masone"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -940,9 +949,10 @@
         <h4>Amarcord — Masone</h4>
         <p>📞 346 849 1804</p>
         <p>📍 Via General Cantore, 7 – Masone</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Amarcord%20Masone">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Amarcord%20Masone"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -951,16 +961,17 @@
 
     <div class="food-category">
 
-      <h3>☕ Bar</h3>
+      <h3 data-i18n="barsTitle">☕ Bar</h3>
 
       <div class="food-card">
         <img src="palazzetto.jpeg" class="food-logo" alt="Palazzetto dello Sport">
         <h4>Palazzetto dello Sport</h4>
         <p>📞 010 921 9092</p>
         <p>📍 Via S. Michele, 32 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Palazzetto%20dello%20Sport%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Palazzetto%20dello%20Sport%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -969,9 +980,10 @@
         <h4>Bar Moderno Di Negretto Giorgia & C. Snc</h4>
         <p>📞 010 920 849</p>
         <p>📍 Piazza Vittorio Emanuele, 1 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Bar%20Moderno%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Bar%20Moderno%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -980,9 +992,10 @@
         <h4>Bar Simoni da Giulia</h4>
         <p>📞 010 860 3592</p>
         <p>📍 Piazza Martiri della Benedicta, 7 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Bar%20Simoni%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Bar%20Simoni%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -991,9 +1004,10 @@
         <h4>Pasticceria Pasticci'Amo</h4>
         <p>📞 351 625 8373</p>
         <p>📍 Via Don Minzoni, 44 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Pasticceria%20PasticciAmo%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Pasticceria%20PasticciAmo%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
@@ -1002,15 +1016,18 @@
         <h4>Bar Stazione</h4>
         <p>📞 010 921 030</p>
         <p>📍 Piazzale Guglielmo Marconi, 27 – Campo Ligure</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Bar%20Stazione%20Campo%20Ligure">
-          📍 Apri in Google Maps →
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Bar%20Stazione%20Campo%20Ligure"
+           data-i18n="maps">
+          🗺️ Apri in Google Maps →
         </a>
       </div>
 
     </div>
 
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
 
@@ -1019,161 +1036,108 @@
 
   <section class="section" id="muoversi">
 
-    <h2>🚗 Come muoversi</h2>
+    <h2 data-i18n="moveTitle">🚗 Come muoversi</h2>
 
-    <p>
-      Da Aria di Campo potete raggiungere facilmente il centro di Campo Ligure e
-      spostarvi nei dintorni sia in auto che con i mezzi pubblici.
+    <p data-i18n="moveIntro">
+      Da Aria di Campo potete raggiungere facilmente il centro di Campo Ligure e spostarvi nei dintorni sia in auto che con i mezzi pubblici.
     </p>
 
-    <div class="transport-block">
-      <h3>🚶 A piedi</h3>
+    <h3 data-i18n="walkTitle">🚶 A piedi</h3>
 
-      <p>
-        Il centro storico di Campo Ligure è raccolto e piacevole da visitare a piedi.
-      </p>
+    <p data-i18n="walkText">
+      Il centro storico di Campo Ligure è raccolto e piacevole da visitare a piedi.
+      Dall’appartamento potrete raggiungere comodamente negozi, bar, ristoranti e i principali punti di interesse del borgo.
+    </p>
 
-      <p>
-        Dall’appartamento potrete raggiungere comodamente negozi, bar, ristoranti
-        e i principali punti di interesse del borgo.
-      </p>
-    </div>
+    <h3 data-i18n="trainTitle">🚆 In treno</h3>
 
-    <div class="transport-block">
-      <h3>🚆 In treno</h3>
+    <p data-i18n="trainText">
+      La stazione ferroviaria di Campo Ligure-Masone si trova a circa 450 metri da Aria di Campo, quindi è facilmente raggiungibile anche a piedi.
+      La linea ferroviaria permette di raggiungere comodamente Genova e Acqui Terme, oltre ad altre località lungo il percorso.
+    </p>
 
-      <p>
-        La stazione ferroviaria di Campo Ligure-Masone si trova a circa 450 metri
-        da Aria di Campo, quindi è facilmente raggiungibile anche a piedi.
-      </p>
+    <p data-i18n="trainTimes">
+      🚆 Genova — circa 40 minuti<br>
+      🚆 Acqui Terme — circa 35 minuti
+    </p>
 
-      <p>
-        La linea ferroviaria permette di raggiungere comodamente Genova e Acqui Terme,
-        oltre ad altre località lungo il percorso.
-      </p>
+    <p data-i18n="trainWarning">
+      Gli orari dei treni possono variare: vi consigliamo di verificarli prima della partenza.
+    </p>
 
-      <p>
-        🚆 Genova — circa 40 minuti<br>
-        🚆 Acqui Terme — circa 35 minuti
-      </p>
+    <h3 data-i18n="busTitle">🚌 In autobus</h3>
 
-      <p>
-        Gli orari dei treni possono variare: vi consigliamo di verificarli prima della partenza.
-      </p>
-    </div>
+    <p data-i18n="busText">
+      Campo Ligure è collegato anche con i paesi della zona tramite il servizio di trasporto pubblico.
+      È possibile raggiungere Genova e diverse località dei dintorni senza utilizzare l’auto.
+    </p>
 
-    <div class="transport-block">
-      <h3>🚌 In autobus</h3>
+    <h3 data-i18n="carTitle">🚗 In auto</h3>
 
-      <p>
-        Campo Ligure è collegato anche con i paesi della zona tramite il servizio
-        di trasporto pubblico.
-      </p>
+    <p data-i18n="carText">
+      Se arrivate in auto, avete la possibilità di utilizzare il garage privato di Aria di Campo oppure il parcheggio pubblico gratuito.
+      Per tutte le informazioni su costo, pagamento, apertura della serranda e parcheggio pubblico, potete consultare direttamente la sezione dedicata:
+    </p>
 
-      <p>
-        È possibile raggiungere Genova e diverse località dei dintorni senza utilizzare l’auto.
-      </p>
-    </div>
+    <button class="maps-button" onclick="showSection('garage')" data-i18n="garageLink">
+      🚗 Info Garage e Parcheggi →
+    </button>
 
-    <div class="transport-block">
-      <h3>🚗 In auto</h3>
+    <h3 data-i18n="seaTitle">🌊 Verso il mare</h3>
 
-      <p>
-        Se arrivate in auto, avete la possibilità di utilizzare il garage privato
-        di Aria di Campo oppure il parcheggio pubblico gratuito.
-      </p>
+    <p data-i18n="seaText">
+      La posizione di Campo Ligure permette di raggiungere facilmente la Riviera del Ponente Ligure, con tante località dove trascorrere una giornata al mare, passeggiare sul lungomare o scoprire i caratteristici borghi della costa.
+    </p>
 
-      <p>
-        Per tutte le informazioni su costo, pagamento, apertura della serranda
-        e parcheggio pubblico, potete consultare direttamente la sezione dedicata:
-      </p>
+    <p data-i18n="seaPlaces">
+      Tra le località più conosciute:<br><br>
+      🌊 Arenzano<br>
+      🌊 Cogoleto<br>
+      🌊 Varazze<br>
+      🌊 Celle Ligure<br>
+      🌊 Albisola<br>
+      🌊 Savona<br>
+      🌊 Finale Ligure<br>
+      🌊 Noli<br>
+      🌊 Spotorno<br>
+      🌊 Bergeggi<br>
+      🌊 Albenga<br>
+      🌊 Alassio
+    </p>
 
-      <button class="back-button" onclick="showSection('garage')">
-        🚗 Info Garage e Parcheggi →
-      </button>
-    </div>
+    <p data-i18n="seaFinal">
+      Dalle spiagge alle passeggiate sul mare, fino ai piccoli borghi e alle località più vivaci, la Riviera del Ponente offre tantissime possibilità per una giornata fuori porta. ☀️🌊
+    </p>
 
-    <div class="transport-block">
-      <h3>🌊 Verso il mare</h3>
+    <h3 data-i18n="genoaTitle">🏙️ Genova</h3>
 
-      <p>
-        La posizione di Campo Ligure permette di raggiungere facilmente la Riviera
-        del Ponente Ligure, con tante località dove trascorrere una giornata al mare,
-        passeggiare sul lungomare o scoprire i caratteristici borghi della costa.
-      </p>
+    <p data-i18n="genoaText">
+      A circa 35 km da Campo Ligure, Genova è facilmente raggiungibile sia in auto sia con i mezzi pubblici.
+      Una buona scelta per una giornata alla scoperta di centro storico, Porto Antico, Acquario e principali attrazioni della città.
+    </p>
 
-      <p>
-        Tra le località più conosciute:
-      </p>
+    <h3 data-i18n="natureDintorniTitle">🌿 Natura e dintorni</h3>
 
-      <p class="destination-list">
-        🌊 Arenzano<br>
-        🌊 Cogoleto<br>
-        🌊 Varazze<br>
-        🌊 Celle Ligure<br>
-        🌊 Albisola<br>
-        🌊 Savona<br>
-        🌊 Finale Ligure<br>
-        🌊 Noli<br>
-        🌊 Spotorno<br>
-        🌊 Bergeggi<br>
-        🌊 Albenga<br>
-        🌊 Alassio
-      </p>
+    <p data-i18n="natureDintorniText">
+      Se invece preferite natura e tranquillità, nei dintorni trovate diverse località interessanti per passeggiate, escursioni e gite fuori porta.
+    </p>
 
-      <p>
-        Dalle spiagge alle passeggiate sul mare, fino ai piccoli borghi e alle località
-        più vivaci, la Riviera del Ponente offre tantissime possibilità per una giornata
-        fuori porta. ☀️🌊
-      </p>
-    </div>
+    <p data-i18n="naturePlaces">
+      🌲 Sassello — natura, passeggiate e prodotti tipici<br>
+      🏘️ Ovada — centro storico, enogastronomia e territorio del Monferrato<br>
+      ♨️ Acqui Terme — terme, centro storico e relax
+    </p>
 
-    <div class="transport-block">
-      <h3>🏙️ Genova</h3>
+    <h3 data-i18n="liguriaTitle">🇮🇹 Liguria o Piemonte?</h3>
 
-      <p>
-        A circa 35 km da Campo Ligure, Genova è facilmente raggiungibile sia in auto
-        sia con i mezzi pubblici.
-      </p>
+    <p data-i18n="liguriaText">
+      Una delle cose belle di soggiornare ad Aria di Campo è proprio la posizione: in poco tempo potete passare dall’entroterra ligure al mare oppure raggiungere il Piemonte.
+      Che abbiate voglia di una giornata al mare, di visitare una città, di fare una passeggiata nella natura o semplicemente scoprire piccoli borghi, Campo Ligure può essere un ottimo punto di partenza. ❤️
+    </p>
 
-      <p>
-        Una buona scelta per una giornata alla scoperta di centro storico, Porto Antico,
-        Acquario e principali attrazioni della città.
-      </p>
-    </div>
-
-    <div class="transport-block">
-      <h3>🌿 Natura e dintorni</h3>
-
-      <p>
-        Se invece preferite natura e tranquillità, nei dintorni trovate diverse località
-        interessanti per passeggiate, escursioni e gite fuori porta.
-      </p>
-
-      <p>
-        🌲 Sassello — natura, passeggiate e prodotti tipici<br>
-        🏘️ Ovada — centro storico, enogastronomia e territorio del Monferrato<br>
-        ♨️ Acqui Terme — terme, centro storico e relax
-      </p>
-    </div>
-
-    <div class="transport-block">
-      <h3>🇮🇹 Liguria o Piemonte?</h3>
-
-      <p>
-        Una delle cose belle di soggiornare ad Aria di Campo è proprio la posizione:
-        in poco tempo potete passare dall’entroterra ligure al mare oppure raggiungere
-        il Piemonte.
-      </p>
-
-      <p>
-        Che abbiate voglia di una giornata al mare, di visitare una città, di fare una
-        passeggiata nella natura o semplicemente scoprire piccoli borghi, Campo Ligure
-        può essere un ottimo punto di partenza. ❤️
-      </p>
-    </div>
-
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
 
@@ -1182,343 +1146,933 @@
 
   <section class="section" id="servizi">
 
-    <h2>🧭 Informazioni e servizi utili</h2>
+    <h2 data-i18n="servicesTitle">🧭 Informazioni e servizi utili</h2>
 
-
-    <!-- SUPERMERCATI -->
 
     <div class="service-category">
 
-      <h3>🛒 Supermercati / Negozi alimentari</h3>
+      <h3 data-i18n="supermarketsTitle">🛒 Supermercati / Negozi alimentari</h3>
 
-      <div class="service-card">
-        <h4>Gulliver di Patrizia e Roberto</h4>
+      <div class="service-item">
+        <strong>Gulliver di Patrizia e Roberto</strong>
         <p>📍 Piazzale Guglielmo Marconi, 3/5 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Gulliver%20di%20Patrizia%20e%20Roberto%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Gulliver%20di%20Patrizia%20e%20Roberto%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Gulliver di Cartasso & C.</h4>
+      <div class="service-item">
+        <strong>Gulliver di Cartasso & C.</strong>
         <p>📍 Via Don Minzoni, 57 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Gulliver%20di%20Cartasso%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Gulliver%20di%20Cartasso%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Polleria Bossolino Snc</h4>
+      <div class="service-item">
+        <strong>Polleria Bossolino Snc</strong>
         <p>📍 Via Don Minzoni, 21 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Polleria%20Bossolino%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Polleria%20Bossolino%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Ortofrutta B.M.O.</h4>
+      <div class="service-item">
+        <strong>Ortofrutta B.M.O.</strong>
         <p>📍 Via Saracco, 43 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Ortofrutta%20BMO%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Ortofrutta%20BMO%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Alimentari da Lulli</h4>
+      <div class="service-item">
+        <strong>Alimentari da Lulli</strong>
         <p>📍 Piazza Vittorio Emanuele II – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Alimentari%20da%20Lulli%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Alimentari%20da%20Lulli%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Sorelle Oliveri S.N.C.</h4>
+      <div class="service-item">
+        <strong>Sorelle Oliveri S.N.C.</strong>
         <p>📍 Via Don Minzoni, 15 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Sorelle%20Oliveri%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Sorelle%20Oliveri%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Macelleria Simone, Giorgio e Bruna</h4>
+      <div class="service-item">
+        <strong>Macelleria Simone, Giorgio e Bruna</strong>
         <p>📍 Via Angelo Serafino Rossi – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Macelleria%20Simone%20Giorgio%20Bruna%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Macelleria%20Simone%20Giorgio%20e%20Bruna%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Occhio alla Pinna</h4>
+      <div class="service-item">
+        <strong>Occhio alla Pinna</strong>
         <p>📍 Via Saracco, 10 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Occhio%20alla%20Pinna%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Occhio%20alla%20Pinna%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
     </div>
 
 
-    <!-- PANIFICI -->
-
     <div class="service-category">
+      <h3 data-i18n="bakeryTitle">🥖 Panifici / Pasticcerie</h3>
 
-      <h3>🥖 Panifici / Pasticcerie</h3>
-
-      <div class="service-card">
-        <h4>Panificio Dal Pio Di Piana G E C Snc</h4>
+      <div class="service-item">
+        <strong>Panificio Dal Pio Di Piana G E C Snc</strong>
         <p>📍 Via Matteo Olivieri, 52 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Panificio%20Dal%20Pio%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Panificio%20Dal%20Pio%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>Al Castello</h4>
+      <div class="service-item">
+        <strong>Al Castello</strong>
         <p>📍 Via Convento, 3 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Al%20Castello%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Al%20Castello%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
-      <div class="service-card">
-        <h4>La Spiga</h4>
+      <div class="service-item">
+        <strong>La Spiga</strong>
         <p>📍 Via Giuseppe Saracco, 11 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=La%20Spiga%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=La%20Spiga%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
-
     </div>
 
 
-    <!-- TABACCHERIA -->
-
     <div class="service-category">
+      <h3 data-i18n="tobaccoTitle">🚬 Tabaccheria</h3>
 
-      <h3>🚬 Tabaccheria</h3>
-
-      <div class="service-card">
-        <h4>Tabaccheria Rosi</h4>
+      <div class="service-item">
+        <strong>Tabaccheria Rosi</strong>
         <p>📍 Via Saracco, 13 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Tabaccheria%20Rosi%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Tabaccheria%20Rosi%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
-
     </div>
 
 
-    <!-- LAVANDERIA -->
-
     <div class="service-category">
+      <h3 data-i18n="laundryTitle">🧺 Lavanderia / Sartoria</h3>
 
-      <h3>🧺 Lavanderia / Sartoria</h3>
-
-      <div class="service-card">
-        <h4>Di Tutto Punto</h4>
+      <div class="service-item">
+        <strong>Di Tutto Punto</strong>
         <p>📍 Via Don Minzoni, 28 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Di%20Tutto%20Punto%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Di%20Tutto%20Punto%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
-
     </div>
 
 
-    <!-- AREA DI SERVIZIO -->
-
     <div class="service-category">
+      <h3 data-i18n="fuelTitle">⛽ Area di servizio</h3>
 
-      <h3>⛽ Area di servizio</h3>
-
-      <div class="service-card">
-        <h4>Q8</h4>
+      <div class="service-item">
+        <strong>Q8</strong>
         <p>📍 Via Isola Giugno, 79 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Q8%20Via%20Isola%20Giugno%2079%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Q8%20Via%20Isola%20Giugno%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
-
     </div>
 
 
-    <!-- FILIGRANA -->
-
     <div class="service-category">
+      <h3 data-i18n="filigreeTitle">💍 Filigrana</h3>
 
-      <h3>💍 Filigrana</h3>
-
-      <div class="service-card">
-        <h4>Filigranart di Oddone Davide</h4>
+      <div class="service-item">
+        <strong>Filigranart di Oddone Davide</strong>
         <p>📍 Via Angelo Serafino Rossi, 15 – 16013 Campo Ligure GE</p>
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Filigranart%20Oddone%20Davide%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Filigranart%20Oddone%20Davide%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
-
     </div>
 
 
-    <!-- SALUTE E ASSISTENZA: COMPLETAMENTE IN FONDO -->
+    <!-- SALUTE E ASSISTENZA: SEMPRE IN FONDO -->
 
     <div class="service-category">
 
-      <h3>🏥 Salute e assistenza</h3>
+      <h3 data-i18n="healthTitle">🏥 Salute e assistenza</h3>
 
+      <h3 data-i18n="pharmaciesTitle">💊 Farmacie</h3>
 
-      <div class="service-card">
-        <h4>💊 Farmacie</h4>
+      <div class="service-item">
+        <strong>💊 Farmacia Del Borgo — Campo Ligure</strong>
+        <p>📍 Vico Del Gelsomino, 1 – 16013 Campo Ligure GE</p>
+        <p>📞 010 921020</p>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Farmacia%20Del%20Borgo%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
+      </div>
 
-        <p>
-          <strong>Farmacia Del Borgo — Campo Ligure</strong><br>
-          📍 Vico Del Gelsomino, 1 – 16013 Campo Ligure GE<br>
-          📞 010 921020
-        </p>
+      <div class="service-item">
+        <strong>💊 Farmacia Bonelli del dottor Attilio Ottonello — Masone</strong>
+        <p>📍 Via Marconi, 12 – 16010 Masone GE</p>
+        <p>📞 010 926007</p>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Farmacia%20Bonelli%20Masone"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
+      </div>
 
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Farmacia%20Del%20Borgo%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+      <div class="service-item">
+        <strong>💊 Farmacia Dottor Giacobbe — Rossiglione</strong>
+        <p>📍 Via Roma, 14 – 16010 Rossiglione GE</p>
+        <p>📞 010 925000</p>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Farmacia%20Dottor%20Giacobbe%20Rossiglione"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
 
-      <div class="service-card">
-        <h4>Farmacia Bonelli del dottor Attilio Ottonello — Masone</h4>
+      <h3 data-i18n="communityTitle">🏥 Casa di Comunità</h3>
 
-        <p>
-          📍 Via Marconi, 12 – 16010 Masone GE<br>
-          📞 010 926007
-        </p>
-
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Farmacia%20Bonelli%20Masone">
-          🗺️ Apri in Google Maps →
-        </a>
+      <div class="service-item">
+        <strong>Casa della Comunità – Distretto 8 Campo Ligure</strong>
+        <p>📍 Via Angelo Serafino Rossi, 33 – 16013 Campo Ligure GE</p>
+        <p>📞 010 849 7842</p>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Casa%20della%20Comunit%C3%A0%20Distretto%208%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
 
-      <div class="service-card">
-        <h4>Farmacia Dottor Giacobbe — Rossiglione</h4>
+      <h3 data-i18n="medicalGuardTitle">🩺 Guardia Medica – Continuità Assistenziale</h3>
 
-        <p>
-          📍 Via Roma, 14 – 16010 Rossiglione GE<br>
-          📞 010 925000
-        </p>
-
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Farmacia%20Dottor%20Giacobbe%20Rossiglione">
-          🗺️ Apri in Google Maps →
-        </a>
+      <div class="service-item">
+        <p>📞 <strong>800 893 580</strong></p>
       </div>
 
 
-      <div class="service-card">
-        <h4>🏥 Casa della Comunità – Distretto 8 Campo Ligure</h4>
+      <h3 data-i18n="redCrossTitle">🚑 Croce Rossa Italiana – Comitato di Campo Ligure</h3>
 
-        <p>
-          📍 Via Angelo Serafino Rossi, 33 – 16013 Campo Ligure GE<br>
-          📞 010 849 7842
-        </p>
-
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Casa%20della%20Comunità%20Distretto%208%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
+      <div class="service-item">
+        <p>📍 Via Don Mario Badino, 2 – 16013 Campo Ligure GE</p>
+        <p>📞 010 920877</p>
+        <a class="maps-button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Croce%20Rossa%20Italiana%20Campo%20Ligure"
+           data-i18n="maps">🗺️ Apri in Google Maps →</a>
       </div>
 
 
-      <div class="service-card">
-        <h4>🩺 Guardia Medica – Continuità Assistenziale</h4>
+      <h3 data-i18n="emergencyTitle">🚨 NUE – Numero Unico di Emergenza</h3>
 
-        <p>
-          📞 <strong>800 893 580</strong>
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <h4>🚑 Croce Rossa Italiana – Comitato di Campo Ligure</h4>
-
-        <p>
-          📍 Via Don Mario Badino, 2 – 16013 Campo Ligure GE<br>
-          📞 010 920877
-        </p>
-
-        <a class="maps-button" target="_blank"
-           href="https://www.google.com/maps/search/?api=1&query=Croce%20Rossa%20Italiana%20Comitato%20Campo%20Ligure">
-          🗺️ Apri in Google Maps →
-        </a>
-      </div>
-
-
-      <div class="service-card">
-        <h4>🚨 NUE – Numero Unico di Emergenza</h4>
-
-        <p>
-          📞 <strong>112</strong>
-        </p>
-
-        <p>
-          <strong>In caso di emergenza, chiamate il 112.</strong>
-        </p>
+      <div class="service-item">
+        <p>📞 <strong>112</strong></p>
+        <p data-i18n="emergencyText"><strong>In caso di emergenza, chiamate il 112.</strong></p>
       </div>
 
     </div>
 
 
-    <button class="back-button" onclick="showMenu()">← Torna al menu</button>
+    <button class="back-button" onclick="showMenu()" data-i18n="back">
+      ← Torna al menu
+    </button>
 
   </section>
-
 
 </main>
 
 
 <script>
 
-  function openGuide() {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("guide").style.display = "block";
-    window.scrollTo(0, 0);
+const translations = {
+
+  it: {
+    welcome: "Benvenuti",
+    subtitle: "La vostra casa nel Borgo di Campo Ligure",
+    discover: "Scopri la casa →",
+    menuIntro: "Tutto quello che vi serve per vivere al meglio il vostro soggiorno.",
+    menuCasa: "🏡 La vostra casa",
+    menuCheckin: "🔑 Check-in & Check-out",
+    menuGarage: "🚗 Il Garage e Parcheggi pubblici",
+    menuRegole: "📋 Regole della casa",
+    menuTerritorio: "📍 Scopri il territorio",
+    menuMangiare: "🍴 Dove mangiare",
+    menuMuoversi: "🚗 Come muoversi",
+    menuServizi: "🧭 Informazioni e servizi utili",
+    back: "← Torna al menu",
+    maps: "🗺️ Apri in Google Maps →",
+
+    casaTitle: "🏡 La vostra casa",
+    ingressoTitle: "🚪 L'ingresso",
+    ingressoText: "Ogni viaggio inizia da un ingresso, ma il nostro vuole farvi sentire subito a casa. Appena varcata la soglia di Aria di Campo, vi accoglierà un ambiente luminoso e curato, dove ogni dettaglio è stato pensato per regalarvi un soggiorno piacevole e rilassante.",
+    soggiornoTitle: "🛋️ Il soggiorno",
+    soggiornoText: "Il soggiorno è il cuore di Aria di Campo. Uno spazio accogliente dove rilassarsi sul comodo divano letto, guardare un film, leggere un libro o condividere un pranzo e una cena insieme. La luce naturale e l'accesso al balcone rendono questo ambiente ancora più piacevole.",
+    cucinaTitle: "🍽️ La cucina",
+    cucinaText1: "La cucina è completamente attrezzata per farvi sentire liberi di vivere la vacanza secondo i vostri ritmi. Dal caffè del mattino alla cena in compagnia, troverete tutto il necessario per sentirvi come a casa.",
+    cucinaText2: "E quando il tempo lo permette, il balcone con tavolino e sedie diventa il luogo ideale per una colazione all'aria aperta o un aperitivo al tramonto.",
+    cameraTitle: "🛏️ La camera padronale",
+    cameraText: "Dopo una giornata tra i vicoli di Campo Ligure, non c'è niente di meglio che concedersi un riposo rigenerante. La camera padronale, con il suo spazioso letto, è pensata per offrirvi comfort, tranquillità e un risveglio piacevole grazie alla luce naturale che entra dalla finestra.",
+    secondaCameraTitle: "🛏️ La seconda camera",
+    secondaCameraText: "Accogliente, luminosa e confortevole. La seconda camera, con letto matrimoniale alla francese, è perfetta per una coppia o per chi desidera uno spazio intimo dove rilassarsi.",
+    bagnoTitle: "🚿 Il bagno",
+    bagnoText: "Comfort e praticità fanno parte dell'esperienza. Il bagno è dotato di doccia, lavabo, WC, bidet e lavatrice, per offrirvi tutta la comodità di cui avete bisogno, sia per un weekend che per un soggiorno più lungo.",
+    balconeTitle: "🌿 Il balcone",
+    balconeText: "C'è un momento della giornata che amiamo particolarmente: quello in cui ci si siede sul balcone con un caffè, un buon libro o un calice di vino. Da qui potrete respirare l'aria di Campo Ligure, rallentare i ritmi e godervi la tranquillità che rende speciale questo borgo.",
+
+    checkinTitle: "🔑 Check-in & Check-out",
+    checkinHeading: "🕐 Check-in",
+    checkinWelcome: "Benvenuti ad <strong>Aria di Campo!</strong>",
+    checkinIntro: "Per rendere il vostro arrivo il più semplice e piacevole possibile, qui trovate tutte le informazioni necessarie per accedere alla casa e iniziare il vostro soggiorno senza pensieri.",
+    checkinTimeLabel: "Orario di check-in:",
+    checkinTime: "dalle 13:00 alle 19:00",
+    arrivalTime: "Se possibile, vi chiediamo gentilmente di comunicare un orario indicativo del vostro arrivo.",
+    accessTitle: "🔑 Accesso alla casa",
+    accessText: "Quando arrivate, <strong>suonate all'interno 1</strong> oppure telefonate al <strong>352 041 1284</strong>.",
+    checkoutHeading: "🕐 Check-out",
+    checkoutText: "È arrivato il momento di salutarci, ma prima di partire vi chiediamo di seguire alcune semplici indicazioni per lasciare la casa pronta per i prossimi ospiti.",
+    checkoutTimeLabel: "Orario di check-out:",
+    checkoutTime: "entro le 10:00",
+    thanks: "<strong>Grazie per aver scelto Aria di Campo. ❤️</strong>",
+    goodbye: "Speriamo che il vostro soggiorno a Campo Ligure sia stato piacevole e che possiate portare con voi un bel ricordo del nostro borgo.",
+
+    garageTitle: "🚗 Il Garage e Parcheggi pubblici",
+    garagePrivateTitle: "🚗 Garage privato",
+    garagePrivateText: "Per rendere il vostro soggiorno ancora più comodo, Aria di Campo dispone di un garage privato situato proprio sotto l’appartamento, all’interno dello stesso stabile.",
+    garageCost: "Costo: 5 € al giorno.",
+    securityTitle: "🔒 Sicurezza",
+    securityText: "Il garage è dotato di videosorveglianza.",
+    paymentTitle: "💳 Pagamento",
+    paymentText: "Il pagamento del garage deve essere effettuato il primo giorno del soggiorno. È possibile effettuare il pagamento anche tramite bancomat.",
+    doorTitle: "🚪 Apertura della serranda",
+    doorText1: "La serranda del garage si apre tramite il pulsante situato all’interno del garage.",
+    doorText2: "È sufficiente premere una sola volta, senza tenere il pulsante premuto, sia per aprire che per chiudere.",
+    attention: "⚠️ Attenzione",
+    doorWarning: "Una volta azionato il pulsante, non passate sotto la serranda durante la chiusura. La serranda è dotata di fotocellule; attendete che sia completamente aperta prima di passare.",
+    publicParkingTitle: "🅿️ Parcheggio pubblico gratuito",
+    publicParkingText: "Se preferite utilizzare il parcheggio pubblico, ne troverete uno a circa 250 metri da Aria di Campo.",
+    publicParkingHow: "<strong>Come raggiungerlo:</strong><br>In fondo alla via girate a destra, prendete la prima uscita e subito sulla destra troverete il parcheggio.",
+    parkingAttention: "⚠️ Attenzione alle modalità di sosta",
+    upperFloor: "Piano superiore",
+    upperFloorText: "🅿️ Gratuito e libero, senza disco orario.",
+    streetLevel: "Piano strada",
+    streetLevelText: "🕐 Parcheggio a tempo, con disco orario obbligatorio.",
+
+    rulesTitle: "📋 Regole della casa",
+    noSmokingTitle: "🚭 Divieto di fumo",
+    noSmokingText: "È vietato fumare all’interno dell’appartamento.",
+    quietTitle: "🤫 Rispetto della quiete",
+    quietText: "Per il benessere di tutti gli ospiti e del vicinato, vi chiediamo di evitare rumori eccessivi e di rispettare il silenzio dalle ore 23:00 alle ore 8:00.",
+    partiesTitle: "🎉 Feste ed eventi",
+    partiesText: "Non sono consentite feste, eventi o riunioni non autorizzate.",
+    careTitle: "🧹 Cura della casa",
+    careText1: "Mantenete gli ambienti puliti e ordinati.",
+    careText2: "Prima della partenza, lasciate la cucina pulita e le stoviglie lavate.",
+    careText3: "Vi chiediamo di utilizzare il bidone della spazzatura per conferire correttamente i rifiuti.",
+    bathroomRulesTitle: "🚿 Bagno",
+    bathroomRulesText1: "Assicuratevi di chiudere sempre bene tutti i rubinetti dopo l’utilizzo.",
+    bathroomRulesText2: "Vi chiediamo gentilmente di non lasciare asciugamani o tappetini all’interno del piatto doccia, così da mantenere il bagno asciutto e in perfette condizioni.",
+    energyTitle: "💡 Risparmio energetico",
+    energyText: "Quando uscite dall’appartamento, spegnete tutte le luci e gli apparecchi elettrici non necessari.",
+    safetyTitle: "🔒 Sicurezza",
+    safetyText: "Chiudete sempre la porta d’ingresso e le finestre quando lasciate l’alloggio e segnalate tempestivamente eventuali guasti o inconvenienti.",
+    petsTitle: "🐾 Animali",
+    petsText: "Gli animali sono ammessi esclusivamente se autorizzati al momento della prenotazione.",
+    rulesThanks: "<strong>Grazie per la vostra collaborazione e vi auguriamo una splendida permanenza! ❤️</strong>",
+
+    territoryTitle: "📍 Scopri il territorio",
+    territoryIntro: "Campo Ligure e i suoi dintorni offrono tante possibilità per scoprire il fascino dell'entroterra ligure, tra natura, storia e tradizioni.",
+    villageTitle: "🏘️ Il borgo",
+    villageText: "Passeggiate tra i vicoli del centro storico e scoprite le atmosfere autentiche di Campo Ligure.",
+    historyTitle: "🏰 Storia e cultura",
+    historyText: "Scoprite il patrimonio storico e culturale del paese.",
+    natureTitle: "🌳 Natura",
+    natureText: "I dintorni di Campo Ligure sono ideali per passeggiate, escursioni e momenti immersi nella natura.",
+    territoryButton: "🌐 Scopri il territorio →",
+
+    foodTitle: "🍴 Dove mangiare",
+    foodIntro: "A Campo Ligure e nei dintorni troverete diverse possibilità per gustare la cucina locale, mangiare una buona pizza o semplicemente fermarvi per una colazione, un caffè o una pausa.",
+    restaurantsTitle: "🍝 Ristoranti",
+    pizzeriasTitle: "🍕 Pizzerie",
+    barsTitle: "☕ Bar",
+
+    moveTitle: "🚗 Come muoversi",
+    moveIntro: "Da Aria di Campo potete raggiungere facilmente il centro di Campo Ligure e spostarvi nei dintorni sia in auto che con i mezzi pubblici.",
+    walkTitle: "🚶 A piedi",
+    walkText: "Il centro storico di Campo Ligure è raccolto e piacevole da visitare a piedi. Dall’appartamento potrete raggiungere comodamente negozi, bar, ristoranti e i principali punti di interesse del borgo.",
+    trainTitle: "🚆 In treno",
+    trainText: "La stazione ferroviaria di Campo Ligure-Masone si trova a circa 450 metri da Aria di Campo, quindi è facilmente raggiungibile anche a piedi. La linea ferroviaria permette di raggiungere comodamente Genova e Acqui Terme, oltre ad altre località lungo il percorso.",
+    trainTimes: "🚆 Genova — circa 40 minuti<br>🚆 Acqui Terme — circa 35 minuti",
+    trainWarning: "Gli orari dei treni possono variare: vi consigliamo di verificarli prima della partenza.",
+    busTitle: "🚌 In autobus",
+    busText: "Campo Ligure è collegato anche con i paesi della zona tramite il servizio di trasporto pubblico. È possibile raggiungere Genova e diverse località dei dintorni senza utilizzare l’auto.",
+    carTitle: "🚗 In auto",
+    carText: "Se arrivate in auto, avete la possibilità di utilizzare il garage privato di Aria di Campo oppure il parcheggio pubblico gratuito. Per tutte le informazioni su costo, pagamento, apertura della serranda e parcheggio pubblico, potete consultare direttamente la sezione dedicata:",
+    garageLink: "🚗 Info Garage e Parcheggi →",
+    seaTitle: "🌊 Verso il mare",
+    seaText: "La posizione di Campo Ligure permette di raggiungere facilmente la Riviera del Ponente Ligure, con tante località dove trascorrere una giornata al mare, passeggiare sul lungomare o scoprire i caratteristici borghi della costa.",
+    seaPlaces: "Tra le località più conosciute:<br><br>🌊 Arenzano<br>🌊 Cogoleto<br>🌊 Varazze<br>🌊 Celle Ligure<br>🌊 Albisola<br>🌊 Savona<br>🌊 Finale Ligure<br>🌊 Noli<br>🌊 Spotorno<br>🌊 Bergeggi<br>🌊 Albenga<br>🌊 Alassio",
+    seaFinal: "Dalle spiagge alle passeggiate sul mare, fino ai piccoli borghi e alle località più vivaci, la Riviera del Ponente offre tantissime possibilità per una giornata fuori porta. ☀️🌊",
+    genoaTitle: "🏙️ Genova",
+    genoaText: "A circa 35 km da Campo Ligure, Genova è facilmente raggiungibile sia in auto sia con i mezzi pubblici. Una buona scelta per una giornata alla scoperta di centro storico, Porto Antico, Acquario e principali attrazioni della città.",
+    natureDintorniTitle: "🌿 Natura e dintorni",
+    natureDintorniText: "Se invece preferite natura e tranquillità, nei dintorni trovate diverse località interessanti per passeggiate, escursioni e gite fuori porta.",
+    naturePlaces: "🌲 Sassello — natura, passeggiate e prodotti tipici<br>🏘️ Ovada — centro storico, enogastronomia e territorio del Monferrato<br>♨️ Acqui Terme — terme, centro storico e relax",
+    liguriaTitle: "🇮🇹 Liguria o Piemonte?",
+    liguriaText: "Una delle cose belle di soggiornare ad Aria di Campo è proprio la posizione: in poco tempo potete passare dall’entroterra ligure al mare oppure raggiungere il Piemonte. Che abbiate voglia di una giornata al mare, di visitare una città, di fare una passeggiata nella natura o semplicemente scoprire piccoli borghi, Campo Ligure può essere un ottimo punto di partenza. ❤️",
+
+    servicesTitle: "🧭 Informazioni e servizi utili",
+    supermarketsTitle: "🛒 Supermercati / Negozi alimentari",
+    bakeryTitle: "🥖 Panifici / Pasticcerie",
+    tobaccoTitle: "🚬 Tabaccheria",
+    laundryTitle: "🧺 Lavanderia / Sartoria",
+    fuelTitle: "⛽ Area di servizio",
+    filigreeTitle: "💍 Filigrana",
+    healthTitle: "🏥 Salute e assistenza",
+    pharmaciesTitle: "💊 Farmacie",
+    communityTitle: "🏥 Casa di Comunità",
+    medicalGuardTitle: "🩺 Guardia Medica – Continuità Assistenziale",
+    redCrossTitle: "🚑 Croce Rossa Italiana – Comitato di Campo Ligure",
+    emergencyTitle: "🚨 NUE – Numero Unico di Emergenza",
+    emergencyText: "<strong>In caso di emergenza, chiamate il 112.</strong>"
+  },
+
+  en: {
+    welcome: "Welcome",
+    subtitle: "Your home in the village of Campo Ligure",
+    discover: "Discover the house →",
+    menuIntro: "Everything you need to enjoy your stay to the fullest.",
+    menuCasa: "🏡 Your home",
+    menuCheckin: "🔑 Check-in & Check-out",
+    menuGarage: "🚗 Garage & Public Parking",
+    menuRegole: "📋 House rules",
+    menuTerritorio: "📍 Discover the area",
+    menuMangiare: "🍴 Where to eat",
+    menuMuoversi: "🚗 Getting around",
+    menuServizi: "🧭 Useful information & services",
+    back: "← Back to menu",
+    maps: "🗺️ Open in Google Maps →",
+
+    casaTitle: "🏡 Your home",
+    ingressoTitle: "🚪 Entrance",
+    ingressoText: "Every journey begins with an entrance, and ours is designed to make you feel at home right away. As soon as you step into Aria di Campo, you will be welcomed by a bright and carefully furnished space, where every detail has been designed to make your stay pleasant and relaxing.",
+    soggiornoTitle: "🛋️ Living room",
+    soggiornoText: "The living room is the heart of Aria di Campo. A welcoming space where you can relax on the comfortable sofa bed, watch a film, read a book or enjoy lunch and dinner together. Natural light and access to the balcony make this room even more pleasant.",
+    cucinaTitle: "🍽️ Kitchen",
+    cucinaText1: "The kitchen is fully equipped so you can enjoy your holiday at your own pace. From your morning coffee to dinner together, you will find everything you need to feel at home.",
+    cucinaText2: "And when the weather allows, the balcony with its table and chairs is the perfect place for an outdoor breakfast or an aperitif at sunset.",
+    cameraTitle: "🛏️ Master bedroom",
+    cameraText: "After a day exploring the streets of Campo Ligure, there is nothing better than a refreshing rest. The master bedroom, with its spacious bed, is designed to offer comfort, tranquillity and a pleasant wake-up thanks to the natural light coming through the window.",
+    secondaCameraTitle: "🛏️ Second bedroom",
+    secondaCameraText: "Welcoming, bright and comfortable. The second bedroom, with its French double bed, is perfect for a couple or for anyone looking for an intimate space to relax.",
+    bagnoTitle: "🚿 Bathroom",
+    bagnoText: "Comfort and practicality are part of the experience. The bathroom has a shower, sink, toilet, bidet and washing machine, providing all the convenience you need for both a weekend and a longer stay.",
+    balconeTitle: "🌿 Balcony",
+    balconeText: "There is one moment of the day we particularly love: sitting on the balcony with a coffee, a good book or a glass of wine. From here you can breathe in the air of Campo Ligure, slow down and enjoy the tranquillity that makes this village special.",
+
+    checkinTitle: "🔑 Check-in & Check-out",
+    checkinHeading: "🕐 Check-in",
+    checkinWelcome: "Welcome to <strong>Aria di Campo!</strong>",
+    checkinIntro: "To make your arrival as easy and pleasant as possible, here you will find all the information you need to access the house and start your stay without worries.",
+    checkinTimeLabel: "Check-in time:",
+    checkinTime: "from 1:00 PM to 7:00 PM",
+    arrivalTime: "If possible, please let us know your approximate arrival time.",
+    accessTitle: "🔑 Access to the house",
+    accessText: "When you arrive, <strong>ring apartment 1</strong> or call <strong>352 041 1284</strong>.",
+    checkoutHeading: "🕐 Check-out",
+    checkoutText: "It is time to say goodbye, but before leaving we kindly ask you to follow a few simple instructions so that the house is ready for the next guests.",
+    checkoutTimeLabel: "Check-out time:",
+    checkoutTime: "by 10:00 AM",
+    thanks: "<strong>Thank you for choosing Aria di Campo. ❤️</strong>",
+    goodbye: "We hope you enjoyed your stay in Campo Ligure and take home a wonderful memory of our village.",
+
+    garageTitle: "🚗 Garage & Public Parking",
+    garagePrivateTitle: "🚗 Private garage",
+    garagePrivateText: "For an even more comfortable stay, Aria di Campo has a private garage located directly below the apartment, inside the same building.",
+    garageCost: "Cost: €5 per day.",
+    securityTitle: "🔒 Security",
+    securityText: "The garage is equipped with video surveillance.",
+    paymentTitle: "💳 Payment",
+    paymentText: "Garage payment must be made on the first day of your stay. Payment by debit card is also possible.",
+    doorTitle: "🚪 Garage door",
+    doorText1: "The garage door is operated using the button located inside the garage.",
+    doorText2: "Press the button once only, without holding it down, both to open and close the door.",
+    attention: "⚠️ Attention",
+    doorWarning: "Once the button has been pressed, do not walk or drive underneath the door while it is closing. The door is equipped with photocells; wait until it is completely open before passing underneath.",
+    publicParkingTitle: "🅿️ Free public parking",
+    publicParkingText: "If you prefer to use public parking, there is one approximately 250 metres from Aria di Campo.",
+    publicParkingHow: "<strong>How to get there:</strong><br>At the end of the street turn right, take the first exit and you will find the parking area immediately on the right.",
+    parkingAttention: "⚠️ Parking regulations",
+    upperFloor: "Upper level",
+    upperFloorText: "🅿️ Free parking, with no time limit.",
+    streetLevel: "Street level",
+    streetLevelText: "🕐 Time-limited parking; a parking disc is required.",
+
+    rulesTitle: "📋 House rules",
+    noSmokingTitle: "🚭 No smoking",
+    noSmokingText: "Smoking is not permitted inside the apartment.",
+    quietTitle: "🤫 Quiet hours",
+    quietText: "For the well-being of all guests and the neighbourhood, please avoid excessive noise and respect quiet hours from 11:00 PM to 8:00 AM.",
+    partiesTitle: "🎉 Parties and events",
+    partiesText: "Unauthorised parties, events or gatherings are not permitted.",
+    careTitle: "🧹 Taking care of the house",
+    careText1: "Please keep the rooms clean and tidy.",
+    careText2: "Before departure, please leave the kitchen clean and the dishes washed.",
+    careText3: "Please use the rubbish bin to dispose of waste correctly.",
+    bathroomRulesTitle: "🚿 Bathroom",
+    bathroomRulesText1: "Always make sure that all taps are properly closed after use.",
+    bathroomRulesText2: "Please do not leave towels or bath mats inside the shower tray, so that the bathroom remains dry and in perfect condition.",
+    energyTitle: "💡 Energy saving",
+    energyText: "When leaving the apartment, please switch off all lights and unnecessary electrical appliances.",
+    safetyTitle: "🔒 Safety",
+    safetyText: "Always close the entrance door and windows when leaving the accommodation and promptly report any faults or problems.",
+    petsTitle: "🐾 Pets",
+    petsText: "Pets are allowed only if authorised at the time of booking.",
+    rulesThanks: "<strong>Thank you for your cooperation and we wish you a wonderful stay! ❤️</strong>",
+
+    territoryTitle: "📍 Discover the area",
+    territoryIntro: "Campo Ligure and its surroundings offer many opportunities to discover the charm of inland Liguria, its nature, history and traditions.",
+    villageTitle: "🏘️ The village",
+    villageText: "Walk through the narrow streets of the historic centre and discover the authentic atmosphere of Campo Ligure.",
+    historyTitle: "🏰 History and culture",
+    historyText: "Discover the historical and cultural heritage of the village.",
+    natureTitle: "🌳 Nature",
+    natureText: "The surroundings of Campo Ligure are ideal for walks, hikes and moments surrounded by nature.",
+    territoryButton: "🌐 Discover the area →",
+
+    foodTitle: "🍴 Where to eat",
+    foodIntro: "In Campo Ligure and the surrounding area you will find several options for enjoying local cuisine, having a good pizza or simply stopping for breakfast, coffee or a break.",
+    restaurantsTitle: "🍝 Restaurants",
+    pizzeriasTitle: "🍕 Pizzerias",
+    barsTitle: "☕ Bars",
+
+    moveTitle: "🚗 Getting around",
+    moveIntro: "From Aria di Campo you can easily reach the centre of Campo Ligure and travel around the surrounding area by car or public transport.",
+    walkTitle: "🚶 On foot",
+    walkText: "The historic centre of Campo Ligure is compact and pleasant to explore on foot. From the apartment you can easily reach shops, bars, restaurants and the village's main points of interest.",
+    trainTitle: "🚆 By train",
+    trainText: "Campo Ligure-Masone railway station is about 450 metres from Aria di Campo, so it can easily be reached on foot. The railway line provides convenient connections to Genoa and Acqui Terme, as well as other destinations along the route.",
+    trainTimes: "🚆 Genoa — approximately 40 minutes<br>🚆 Acqui Terme — approximately 35 minutes",
+    trainWarning: "Train timetables may vary: we recommend checking them before travelling.",
+    busTitle: "🚌 By bus",
+    busText: "Campo Ligure is also connected to nearby towns by public transport. Genoa and several surrounding destinations can be reached without using a car.",
+    carTitle: "🚗 By car",
+    carText: "If you arrive by car, you can use Aria di Campo's private garage or the free public parking area. For all information about the cost, payment, garage door and public parking, please consult the dedicated section:",
+    garageLink: "🚗 Garage & Parking information →",
+    seaTitle: "🌊 Towards the sea",
+    seaText: "Campo Ligure's location makes it easy to reach the Riviera di Ponente, with many places where you can spend a day at the beach, walk along the seafront or discover charming coastal villages.",
+    seaPlaces: "Among the best-known destinations:<br><br>🌊 Arenzano<br>🌊 Cogoleto<br>🌊 Varazze<br>🌊 Celle Ligure<br>🌊 Albisola<br>🌊 Savona<br>🌊 Finale Ligure<br>🌊 Noli<br>🌊 Spotorno<br>🌊 Bergeggi<br>🌊 Albenga<br>🌊 Alassio",
+    seaFinal: "From beaches and seafront walks to small villages and livelier seaside towns, the Riviera di Ponente offers countless opportunities for a day trip. ☀️🌊",
+    genoaTitle: "🏙️ Genoa",
+    genoaText: "About 35 km from Campo Ligure, Genoa is easily reachable both by car and public transport. It is a great choice for a day discovering the historic centre, Porto Antico, the Aquarium and the city's main attractions.",
+    natureDintorniTitle: "🌿 Nature and surroundings",
+    natureDintorniText: "If you prefer nature and tranquillity, the surrounding area offers several interesting destinations for walks, hikes and day trips.",
+    naturePlaces: "🌲 Sassello — nature, walks and local specialities<br>🏘️ Ovada — historic centre, food and wine and the Monferrato area<br>♨️ Acqui Terme — thermal baths, historic centre and relaxation",
+    liguriaTitle: "🇮🇹 Liguria or Piedmont?",
+    liguriaText: "One of the great advantages of staying at Aria di Campo is its location: in a short time you can go from the Ligurian hinterland to the sea or reach Piedmont. Whether you feel like spending a day at the beach, visiting a city, walking in nature or simply discovering small villages, Campo Ligure is an excellent starting point. ❤️",
+
+    servicesTitle: "🧭 Useful information & services",
+    supermarketsTitle: "🛒 Supermarkets / Grocery stores",
+    bakeryTitle: "🥖 Bakeries / Pastry shops",
+    tobaccoTitle: "🚬 Tobacco shop",
+    laundryTitle: "🧺 Laundry / Tailor",
+    fuelTitle: "⛽ Petrol station",
+    filigreeTitle: "💍 Filigree",
+    healthTitle: "🏥 Health & assistance",
+    pharmaciesTitle: "💊 Pharmacies",
+    communityTitle: "🏥 Community Health Centre",
+    medicalGuardTitle: "🩺 Out-of-hours medical service",
+    redCrossTitle: "🚑 Italian Red Cross – Campo Ligure Committee",
+    emergencyTitle: "🚨 Emergency number – 112",
+    emergencyText: "<strong>In case of emergency, call 112.</strong>"
+  },
+
+  de: {
+    welcome: "Willkommen",
+    subtitle: "Ihr Zuhause im Dorf Campo Ligure",
+    discover: "Das Haus entdecken →",
+    menuIntro: "Alles, was Sie für einen angenehmen Aufenthalt benötigen.",
+    menuCasa: "🏡 Ihr Zuhause",
+    menuCheckin: "🔑 Check-in & Check-out",
+    menuGarage: "🚗 Garage & öffentliche Parkplätze",
+    menuRegole: "📋 Hausregeln",
+    menuTerritorio: "📍 Die Umgebung entdecken",
+    menuMangiare: "🍴 Essen gehen",
+    menuMuoversi: "🚗 Unterwegs",
+    menuServizi: "🧭 Nützliche Informationen & Services",
+    back: "← Zurück zum Menü",
+    maps: "🗺️ In Google Maps öffnen →",
+
+    casaTitle: "🏡 Ihr Zuhause",
+    ingressoTitle: "🚪 Eingang",
+    ingressoText: "Jede Reise beginnt mit einem Eingang, und unserer soll Sie sofort willkommen heißen. Sobald Sie Aria di Campo betreten, erwartet Sie eine helle und liebevoll eingerichtete Umgebung, in der jedes Detail für einen angenehmen und erholsamen Aufenthalt gestaltet wurde.",
+    soggiornoTitle: "🛋️ Wohnzimmer",
+    soggiornoText: "Das Wohnzimmer ist das Herzstück von Aria di Campo. Ein gemütlicher Raum, in dem Sie auf dem komfortablen Schlafsofa entspannen, einen Film schauen, ein Buch lesen oder gemeinsam zu Mittag und zu Abend essen können. Das natürliche Licht und der Zugang zum Balkon machen diesen Raum besonders angenehm.",
+    cucinaTitle: "🍽️ Küche",
+    cucinaText1: "Die Küche ist vollständig ausgestattet, damit Sie Ihren Urlaub ganz nach Ihrem eigenen Rhythmus genießen können. Vom morgendlichen Kaffee bis zum gemeinsamen Abendessen finden Sie alles, was Sie brauchen, um sich wie zu Hause zu fühlen.",
+    cucinaText2: "Wenn das Wetter es erlaubt, ist der Balkon mit Tisch und Stühlen der ideale Ort für ein Frühstück im Freien oder einen Aperitif bei Sonnenuntergang.",
+    cameraTitle: "🛏️ Hauptschlafzimmer",
+    cameraText: "Nach einem Tag in den Gassen von Campo Ligure gibt es nichts Besseres als erholsamen Schlaf. Das Hauptschlafzimmer mit seinem geräumigen Bett bietet Komfort und Ruhe und sorgt dank des natürlichen Lichts am Morgen für ein angenehmes Aufwachen.",
+    secondaCameraTitle: "🛏️ Zweites Schlafzimmer",
+    secondaCameraText: "Gemütlich, hell und komfortabel. Das zweite Schlafzimmer mit französischem Doppelbett ist ideal für ein Paar oder für alle, die einen privaten Raum zum Entspannen wünschen.",
+    bagnoTitle: "🚿 Badezimmer",
+    bagnoText: "Komfort und Zweckmäßigkeit gehören zum Aufenthalt dazu. Das Badezimmer verfügt über Dusche, Waschbecken, WC, Bidet und Waschmaschine und bietet damit alles, was Sie für ein Wochenende oder einen längeren Aufenthalt benötigen.",
+    balconeTitle: "🌿 Balkon",
+    balconeText: "Es gibt einen Moment des Tages, den wir besonders lieben: auf dem Balkon mit einem Kaffee, einem guten Buch oder einem Glas Wein zu sitzen. Hier können Sie die Luft von Campo Ligure genießen, zur Ruhe kommen und die Atmosphäre dieses besonderen Dorfes erleben.",
+
+    checkinTitle: "🔑 Check-in & Check-out",
+    checkinHeading: "🕐 Check-in",
+    checkinWelcome: "Willkommen bei <strong>Aria di Campo!</strong>",
+    checkinIntro: "Damit Ihre Ankunft so einfach und angenehm wie möglich ist, finden Sie hier alle Informationen, die Sie für den Zugang zum Haus und einen sorgenfreien Start in Ihren Aufenthalt benötigen.",
+    checkinTimeLabel: "Check-in-Zeit:",
+    checkinTime: "von 13:00 bis 19:00 Uhr",
+    arrivalTime: "Wenn möglich, teilen Sie uns bitte ungefähr Ihre Ankunftszeit mit.",
+    accessTitle: "🔑 Zugang zum Haus",
+    accessText: "Wenn Sie ankommen, <strong>klingeln Sie bei Wohnung 1</strong> oder rufen Sie <strong>352 041 1284</strong> an.",
+    checkoutHeading: "🕐 Check-out",
+    checkoutText: "Es ist Zeit, Abschied zu nehmen. Vor Ihrer Abreise bitten wir Sie, einige einfache Hinweise zu beachten, damit das Haus für die nächsten Gäste bereit ist.",
+    checkoutTimeLabel: "Check-out-Zeit:",
+    checkoutTime: "bis 10:00 Uhr",
+    thanks: "<strong>Vielen Dank, dass Sie sich für Aria di Campo entschieden haben. ❤️</strong>",
+    goodbye: "Wir hoffen, dass Ihnen Ihr Aufenthalt in Campo Ligure gefallen hat und Sie eine schöne Erinnerung an unser Dorf mit nach Hause nehmen.",
+
+    garageTitle: "🚗 Garage & öffentliche Parkplätze",
+    garagePrivateTitle: "🚗 Private Garage",
+    garagePrivateText: "Für noch mehr Komfort verfügt Aria di Campo über eine private Garage direkt unter der Wohnung im selben Gebäude.",
+    garageCost: "Kosten: 5 € pro Tag.",
+    securityTitle: "🔒 Sicherheit",
+    securityText: "Die Garage ist videoüberwacht.",
+    paymentTitle: "💳 Zahlung",
+    paymentText: "Die Garagengebühr muss am ersten Aufenthaltstag bezahlt werden. Eine Zahlung mit Bankomatkarte ist ebenfalls möglich.",
+    doorTitle: "🚪 Garagentor",
+    doorText1: "Das Garagentor wird mit dem Schalter im Inneren der Garage geöffnet.",
+    doorText2: "Drücken Sie den Schalter nur einmal und halten Sie ihn nicht gedrückt – sowohl zum Öffnen als auch zum Schließen.",
+    attention: "⚠️ Achtung",
+    doorWarning: "Nach Betätigung des Schalters dürfen Sie während des Schließvorgangs nicht unter dem Tor hindurchgehen. Das Tor ist mit Lichtschranken ausgestattet; warten Sie, bis es vollständig geöffnet ist.",
+    publicParkingTitle: "🅿️ Kostenlose öffentliche Parkplätze",
+    publicParkingText: "Wenn Sie öffentliche Parkplätze bevorzugen, befindet sich einer etwa 250 Meter von Aria di Campo entfernt.",
+    publicParkingHow: "<strong>So erreichen Sie ihn:</strong><br>Am Ende der Straße rechts abbiegen, die erste Ausfahrt nehmen; direkt rechts befindet sich der Parkplatz.",
+    parkingAttention: "⚠️ Hinweise zum Parken",
+    upperFloor: "Oberes Parkdeck",
+    upperFloorText: "🅿️ Kostenlos und ohne zeitliche Begrenzung.",
+    streetLevel: "Straßenniveau",
+    streetLevelText: "🕐 Zeitlich begrenztes Parken; Parkscheibe erforderlich.",
+
+    rulesTitle: "📋 Hausregeln",
+    noSmokingTitle: "🚭 Rauchverbot",
+    noSmokingText: "Das Rauchen ist in der Wohnung nicht gestattet.",
+    quietTitle: "🤫 Ruhezeiten",
+    quietText: "Bitte vermeiden Sie übermäßigen Lärm und beachten Sie zum Wohl aller Gäste und der Nachbarschaft die Ruhezeit von 23:00 bis 8:00 Uhr.",
+    partiesTitle: "🎉 Partys und Veranstaltungen",
+    partiesText: "Nicht genehmigte Partys, Veranstaltungen oder Zusammenkünfte sind nicht gestattet.",
+    careTitle: "🧹 Sorgfalt im Haus",
+    careText1: "Bitte halten Sie die Räume sauber und ordentlich.",
+    careText2: "Bitte hinterlassen Sie vor der Abreise die Küche sauber und das Geschirr gespült.",
+    careText3: "Bitte benutzen Sie den Abfalleimer und entsorgen Sie den Müll ordnungsgemäß.",
+    bathroomRulesTitle: "🚿 Badezimmer",
+    bathroomRulesText1: "Achten Sie darauf, alle Wasserhähne nach der Benutzung gut zu schließen.",
+    bathroomRulesText2: "Bitte lassen Sie keine Handtücher oder Badematten in der Dusche liegen, damit das Badezimmer trocken und in einwandfreiem Zustand bleibt.",
+    energyTitle: "💡 Energiesparen",
+    energyText: "Schalten Sie beim Verlassen der Wohnung alle Lichter und nicht benötigten Elektrogeräte aus.",
+    safetyTitle: "🔒 Sicherheit",
+    safetyText: "Schließen Sie beim Verlassen der Unterkunft immer die Eingangstür und die Fenster und melden Sie Schäden oder Probleme umgehend.",
+    petsTitle: "🐾 Haustiere",
+    petsText: "Haustiere sind nur erlaubt, wenn dies bei der Buchung genehmigt wurde.",
+    rulesThanks: "<strong>Vielen Dank für Ihre Mitarbeit und einen wunderschönen Aufenthalt! ❤️</strong>",
+
+    territoryTitle: "📍 Die Umgebung entdecken",
+    territoryIntro: "Campo Ligure und seine Umgebung bieten viele Möglichkeiten, den Charme des ligurischen Hinterlandes mit seiner Natur, Geschichte und seinen Traditionen zu entdecken.",
+    villageTitle: "🏘️ Das Dorf",
+    villageText: "Spazieren Sie durch die engen Gassen der Altstadt und entdecken Sie die authentische Atmosphäre von Campo Ligure.",
+    historyTitle: "🏰 Geschichte und Kultur",
+    historyText: "Entdecken Sie das historische und kulturelle Erbe des Ortes.",
+    natureTitle: "🌳 Natur",
+    natureText: "Die Umgebung von Campo Ligure eignet sich ideal für Spaziergänge, Wanderungen und erholsame Momente in der Natur.",
+    territoryButton: "🌐 Die Umgebung entdecken →",
+
+    foodTitle: "🍴 Essen gehen",
+    foodIntro: "In Campo Ligure und Umgebung finden Sie verschiedene Möglichkeiten, die lokale Küche zu genießen, eine gute Pizza zu essen oder einfach zum Frühstück, auf einen Kaffee oder für eine Pause einzukehren.",
+    restaurantsTitle: "🍝 Restaurants",
+    pizzeriasTitle: "🍕 Pizzerien",
+    barsTitle: "☕ Bars",
+
+    moveTitle: "🚗 Unterwegs",
+    moveIntro: "Von Aria di Campo erreichen Sie das Zentrum von Campo Ligure bequem und können die Umgebung sowohl mit dem Auto als auch mit öffentlichen Verkehrsmitteln erkunden.",
+    walkTitle: "🚶 Zu Fuß",
+    walkText: "Die historische Altstadt von Campo Ligure ist kompakt und angenehm zu Fuß zu erkunden. Von der Wohnung erreichen Sie bequem Geschäfte, Bars, Restaurants und die wichtigsten Sehenswürdigkeiten des Dorfes.",
+    trainTitle: "🚆 Mit dem Zug",
+    trainText: "Der Bahnhof Campo Ligure-Masone liegt etwa 450 Meter von Aria di Campo entfernt und ist daher auch zu Fuß leicht erreichbar. Die Bahnlinie bietet bequeme Verbindungen nach Genua und Acqui Terme sowie zu weiteren Orten entlang der Strecke.",
+    trainTimes: "🚆 Genua — ca. 40 Minuten<br>🚆 Acqui Terme — ca. 35 Minuten",
+    trainWarning: "Die Zugfahrpläne können variieren. Wir empfehlen, sie vor der Abreise zu überprüfen.",
+    busTitle: "🚌 Mit dem Bus",
+    busText: "Campo Ligure ist über den öffentlichen Nahverkehr auch mit den umliegenden Orten verbunden. Genua und verschiedene Ziele in der Umgebung können ohne Auto erreicht werden.",
+    carTitle: "🚗 Mit dem Auto",
+    carText: "Wenn Sie mit dem Auto anreisen, können Sie die private Garage von Aria di Campo oder den kostenlosen öffentlichen Parkplatz nutzen. Alle Informationen zu Kosten, Zahlung, Garagentor und öffentlichem Parkplatz finden Sie im entsprechenden Abschnitt:",
+    garageLink: "🚗 Informationen zu Garage & Parkplätzen →",
+    seaTitle: "🌊 Zum Meer",
+    seaText: "Die Lage von Campo Ligure ermöglicht eine einfache Fahrt an die Riviera di Ponente mit vielen Orten, an denen Sie einen Tag am Meer verbringen, an der Promenade spazieren oder charakteristische Küstendörfer entdecken können.",
+    seaPlaces: "Zu den bekanntesten Orten gehören:<br><br>🌊 Arenzano<br>🌊 Cogoleto<br>🌊 Varazze<br>🌊 Celle Ligure<br>🌊 Albisola<br>🌊 Savona<br>🌊 Finale Ligure<br>🌊 Noli<br>🌊 Spotorno<br>🌊 Bergeggi<br>🌊 Albenga<br>🌊 Alassio",
+    seaFinal: "Von Stränden und Spaziergängen am Meer bis hin zu kleinen Dörfern und lebhaften Küstenorten bietet die Riviera di Ponente unzählige Möglichkeiten für einen Tagesausflug. ☀️🌊",
+    genoaTitle: "🏙️ Genua",
+    genoaText: "Genua liegt etwa 35 km von Campo Ligure entfernt und ist sowohl mit dem Auto als auch mit öffentlichen Verkehrsmitteln gut erreichbar. Ideal für einen Tag, um die Altstadt, den Porto Antico, das Aquarium und die wichtigsten Sehenswürdigkeiten der Stadt zu entdecken.",
+    natureDintorniTitle: "🌿 Natur und Umgebung",
+    natureDintorniText: "Wenn Sie Natur und Ruhe bevorzugen, finden Sie in der Umgebung verschiedene interessante Orte für Spaziergänge, Wanderungen und Tagesausflüge.",
+    naturePlaces: "🌲 Sassello — Natur, Spaziergänge und lokale Spezialitäten<br>🏘️ Ovada — Altstadt, Gastronomie und das Monferrato-Gebiet<br>♨️ Acqui Terme — Thermalbäder, Altstadt und Erholung",
+    liguriaTitle: "🇮🇹 Ligurien oder Piemont?",
+    liguriaText: "Ein großer Vorteil von Aria di Campo ist die Lage: In kurzer Zeit gelangen Sie vom ligurischen Hinterland ans Meer oder ins Piemont. Ob Sie einen Tag am Meer verbringen, eine Stadt besuchen, in der Natur spazieren oder kleine Dörfer entdecken möchten – Campo Ligure ist ein idealer Ausgangspunkt. ❤️",
+
+    servicesTitle: "🧭 Nützliche Informationen & Services",
+    supermarketsTitle: "🛒 Supermärkte / Lebensmittelgeschäfte",
+    bakeryTitle: "🥖 Bäckereien / Konditoreien",
+    tobaccoTitle: "🚬 Tabakladen",
+    laundryTitle: "🧺 Wäscherei / Schneiderei",
+    fuelTitle: "⛽ Tankstelle",
+    filigreeTitle: "💍 Filigran",
+    healthTitle: "🏥 Gesundheit & medizinische Hilfe",
+    pharmaciesTitle: "💊 Apotheken",
+    communityTitle: "🏥 Gemeinschafts-Gesundheitszentrum",
+    medicalGuardTitle: "🩺 Ärztlicher Bereitschaftsdienst",
+    redCrossTitle: "🚑 Italienisches Rotes Kreuz – Komitee Campo Ligure",
+    emergencyTitle: "🚨 Notruf – 112",
+    emergencyText: "<strong>Im Notfall rufen Sie 112 an.</strong>"
+  },
+
+  fr: {
+    welcome: "Bienvenue",
+    subtitle: "Votre maison dans le village de Campo Ligure",
+    discover: "Découvrir la maison →",
+    menuIntro: "Tout ce dont vous avez besoin pour profiter pleinement de votre séjour.",
+    menuCasa: "🏡 Votre maison",
+    menuCheckin: "🔑 Check-in & Check-out",
+    menuGarage: "🚗 Garage et parkings publics",
+    menuRegole: "📋 Règles de la maison",
+    menuTerritorio: "📍 Découvrir la région",
+    menuMangiare: "🍴 Où manger",
+    menuMuoversi: "🚗 Se déplacer",
+    menuServizi: "🧭 Informations et services utiles",
+    back: "← Retour au menu",
+    maps: "🗺️ Ouvrir dans Google Maps →",
+
+    casaTitle: "🏡 Votre maison",
+    ingressoTitle: "🚪 L'entrée",
+    ingressoText: "Chaque voyage commence par une entrée, et la nôtre est conçue pour vous faire sentir immédiatement chez vous. Dès que vous franchissez la porte d'Aria di Campo, vous découvrirez un espace lumineux et soigneusement aménagé, où chaque détail a été pensé pour rendre votre séjour agréable et reposant.",
+    soggiornoTitle: "🛋️ Le séjour",
+    soggiornoText: "Le séjour est le cœur d'Aria di Campo. Un espace accueillant où vous pourrez vous détendre sur le confortable canapé-lit, regarder un film, lire un livre ou partager un déjeuner et un dîner. La lumière naturelle et l'accès au balcon rendent cette pièce encore plus agréable.",
+    cucinaTitle: "🍽️ La cuisine",
+    cucinaText1: "La cuisine est entièrement équipée pour vous permettre de vivre vos vacances à votre rythme. Du café du matin au dîner en compagnie, vous trouverez tout le nécessaire pour vous sentir comme chez vous.",
+    cucinaText2: "Lorsque le temps le permet, le balcon avec sa table et ses chaises devient l'endroit idéal pour prendre un petit-déjeuner en plein air ou un apéritif au coucher du soleil.",
+    cameraTitle: "🛏️ La chambre principale",
+    cameraText: "Après une journée dans les ruelles de Campo Ligure, rien de mieux qu'un repos bien mérité. La chambre principale, avec son grand lit, est conçue pour vous offrir confort et tranquillité, ainsi qu'un réveil agréable grâce à la lumière naturelle qui entre par la fenêtre.",
+    secondaCameraTitle: "🛏️ La deuxième chambre",
+    secondaCameraText: "Accueillante, lumineuse et confortable. La deuxième chambre, avec son lit double à la française, est parfaite pour un couple ou pour ceux qui souhaitent disposer d'un espace intime pour se détendre.",
+    bagnoTitle: "🚿 La salle de bains",
+    bagnoText: "Confort et praticité font partie de l'expérience. La salle de bains dispose d'une douche, d'un lavabo, de WC, d'un bidet et d'un lave-linge, pour vous offrir tout le confort nécessaire, aussi bien pour un week-end que pour un séjour plus long.",
+    balconeTitle: "🌿 Le balcon",
+    balconeText: "Il y a un moment de la journée que nous aimons particulièrement : celui où l'on s'assoit sur le balcon avec un café, un bon livre ou un verre de vin. De là, vous pourrez respirer l'air de Campo Ligure, ralentir le rythme et profiter de la tranquillité qui rend ce village si spécial.",
+
+    checkinTitle: "🔑 Check-in & Check-out",
+    checkinHeading: "🕐 Check-in",
+    checkinWelcome: "Bienvenue à <strong>Aria di Campo !</strong>",
+    checkinIntro: "Pour rendre votre arrivée aussi simple et agréable que possible, vous trouverez ici toutes les informations nécessaires pour accéder à la maison et commencer votre séjour en toute sérénité.",
+    checkinTimeLabel: "Heure du check-in :",
+    checkinTime: "de 13h00 à 19h00",
+    arrivalTime: "Si possible, nous vous remercions de nous communiquer une heure approximative de votre arrivée.",
+    accessTitle: "🔑 Accès à la maison",
+    accessText: "À votre arrivée, <strong>sonnez à l'appartement 1</strong> ou appelez le <strong>352 041 1284</strong>.",
+    checkoutHeading: "🕐 Check-out",
+    checkoutText: "Il est temps de nous dire au revoir. Avant votre départ, nous vous demandons de suivre quelques indications simples afin de laisser la maison prête pour les prochains voyageurs.",
+    checkoutTimeLabel: "Heure du check-out :",
+    checkoutTime: "avant 10h00",
+    thanks: "<strong>Merci d'avoir choisi Aria di Campo. ❤️</strong>",
+    goodbye: "Nous espérons que votre séjour à Campo Ligure vous a plu et que vous repartirez avec un beau souvenir de notre village.",
+
+    garageTitle: "🚗 Garage et parkings publics",
+    garagePrivateTitle: "🚗 Garage privé",
+    garagePrivateText: "Pour rendre votre séjour encore plus confortable, Aria di Campo dispose d'un garage privé situé juste sous l'appartement, dans le même immeuble.",
+    garageCost: "Tarif : 5 € par jour.",
+    securityTitle: "🔒 Sécurité",
+    securityText: "Le garage est équipé d'un système de vidéosurveillance.",
+    paymentTitle: "💳 Paiement",
+    paymentText: "Le paiement du garage doit être effectué le premier jour du séjour. Le paiement par carte bancaire est également possible.",
+    doorTitle: "🚪 Ouverture de la porte du garage",
+    doorText1: "La porte du garage s'ouvre à l'aide du bouton situé à l'intérieur du garage.",
+    doorText2: "Il suffit d'appuyer une seule fois, sans maintenir le bouton enfoncé, aussi bien pour ouvrir que pour fermer.",
+    attention: "⚠️ Attention",
+    doorWarning: "Après avoir actionné le bouton, ne passez pas sous la porte pendant sa fermeture. La porte est équipée de cellules photoélectriques ; attendez qu'elle soit complètement ouverte avant de passer.",
+    publicParkingTitle: "🅿️ Parking public gratuit",
+    publicParkingText: "Si vous préférez utiliser le parking public, vous en trouverez un à environ 250 mètres d'Aria di Campo.",
+    publicParkingHow: "<strong>Comment y accéder :</strong><br>Au bout de la rue, tournez à droite, prenez la première sortie et le parking se trouve immédiatement sur votre droite.",
+    parkingAttention: "⚠️ Modalités de stationnement",
+    upperFloor: "Niveau supérieur",
+    upperFloorText: "🅿️ Gratuit et sans limitation de durée.",
+    streetLevel: "Niveau rue",
+    streetLevelText: "🕐 Stationnement limité dans le temps, avec disque obligatoire.",
+
+    rulesTitle: "📋 Règles de la maison",
+    noSmokingTitle: "🚭 Interdiction de fumer",
+    noSmokingText: "Il est interdit de fumer à l'intérieur de l'appartement.",
+    quietTitle: "🤫 Respect du calme",
+    quietText: "Pour le bien-être de tous les voyageurs et du voisinage, nous vous demandons d'éviter les bruits excessifs et de respecter le calme de 23h00 à 8h00.",
+    partiesTitle: "🎉 Fêtes et événements",
+    partiesText: "Les fêtes, événements ou rassemblements non autorisés ne sont pas permis.",
+    careTitle: "🧹 Respect de la maison",
+    careText1: "Merci de garder les pièces propres et rangées.",
+    careText2: "Avant votre départ, merci de laisser la cuisine propre et la vaisselle lavée.",
+    careText3: "Nous vous demandons d'utiliser la poubelle afin de trier et jeter correctement les déchets.",
+    bathroomRulesTitle: "🚿 Salle de bains",
+    bathroomRulesText1: "Veillez à toujours bien fermer tous les robinets après utilisation.",
+    bathroomRulesText2: "Merci de ne pas laisser de serviettes ou de tapis de bain dans le receveur de douche, afin de garder la salle de bains sèche et en parfait état.",
+    energyTitle: "💡 Économies d'énergie",
+    energyText: "Lorsque vous quittez l'appartement, éteignez toutes les lumières et les appareils électriques non nécessaires.",
+    safetyTitle: "🔒 Sécurité",
+    safetyText: "Fermez toujours la porte d'entrée et les fenêtres lorsque vous quittez le logement et signalez rapidement tout problème ou dysfonctionnement.",
+    petsTitle: "🐾 Animaux",
+    petsText: "Les animaux sont acceptés uniquement s'ils ont été autorisés au moment de la réservation.",
+    rulesThanks: "<strong>Merci pour votre collaboration et nous vous souhaitons un excellent séjour ! ❤️</strong>",
+
+    territoryTitle: "📍 Découvrir la région",
+    territoryIntro: "Campo Ligure et ses environs offrent de nombreuses possibilités pour découvrir le charme de l'arrière-pays ligure, entre nature, histoire et traditions.",
+    villageTitle: "🏘️ Le village",
+    villageText: "Promenez-vous dans les ruelles du centre historique et découvrez l'atmosphère authentique de Campo Ligure.",
+    historyTitle: "🏰 Histoire et culture",
+    historyText: "Découvrez le patrimoine historique et culturel du village.",
+    natureTitle: "🌳 Nature",
+    natureText: "Les environs de Campo Ligure sont parfaits pour les promenades, les randonnées et les moments au cœur de la nature.",
+    territoryButton: "🌐 Découvrir la région →",
+
+    foodTitle: "🍴 Où manger",
+    foodIntro: "À Campo Ligure et dans les environs, vous trouverez plusieurs possibilités pour déguster la cuisine locale, manger une bonne pizza ou simplement vous arrêter pour un petit-déjeuner, un café ou une pause.",
+    restaurantsTitle: "🍝 Restaurants",
+    pizzeriasTitle: "🍕 Pizzerias",
+    barsTitle: "☕ Bars",
+
+    moveTitle: "🚗 Se déplacer",
+    moveIntro: "Depuis Aria di Campo, vous pouvez facilement rejoindre le centre de Campo Ligure et vous déplacer dans les environs en voiture ou en transports publics.",
+    walkTitle: "🚶 À pied",
+    walkText: "Le centre historique de Campo Ligure est compact et agréable à visiter à pied. Depuis l'appartement, vous pouvez facilement rejoindre les commerces, bars, restaurants et principaux points d'intérêt du village.",
+    trainTitle: "🚆 En train",
+    trainText: "La gare de Campo Ligure-Masone se trouve à environ 450 mètres d'Aria di Campo et est donc facilement accessible à pied. La ligne ferroviaire permet de rejoindre facilement Gênes et Acqui Terme ainsi que d'autres localités sur le trajet.",
+    trainTimes: "🚆 Gênes — environ 40 minutes<br>🚆 Acqui Terme — environ 35 minutes",
+    trainWarning: "Les horaires des trains peuvent varier : nous vous conseillons de les vérifier avant votre départ.",
+    busTitle: "🚌 En bus",
+    busText: "Campo Ligure est également relié aux communes voisines par les transports publics. Il est possible de rejoindre Gênes et plusieurs localités des environs sans utiliser la voiture.",
+    carTitle: "🚗 En voiture",
+    carText: "Si vous arrivez en voiture, vous pouvez utiliser le garage privé d'Aria di Campo ou le parking public gratuit. Pour toutes les informations concernant le tarif, le paiement, la porte du garage et le parking public, consultez la section dédiée :",
+    garageLink: "🚗 Informations Garage et Parkings →",
+    seaTitle: "🌊 Vers la mer",
+    seaText: "La situation de Campo Ligure permet de rejoindre facilement la Riviera di Ponente, avec de nombreuses destinations où passer une journée à la mer, se promener sur le front de mer ou découvrir les villages caractéristiques de la côte.",
+    seaPlaces: "Parmi les destinations les plus connues :<br><br>🌊 Arenzano<br>🌊 Cogoleto<br>🌊 Varazze<br>🌊 Celle Ligure<br>🌊 Albisola<br>🌊 Savona<br>🌊 Finale Ligure<br>🌊 Noli<br>🌊 Spotorno<br>🌊 Bergeggi<br>🌊 Albenga<br>🌊 Alassio",
+    seaFinal: "Des plages aux promenades en bord de mer, en passant par les petits villages et les stations balnéaires plus animées, la Riviera di Ponente offre de nombreuses possibilités pour une excursion d'une journée. ☀️🌊",
+    genoaTitle: "🏙️ Gênes",
+    genoaText: "À environ 35 km de Campo Ligure, Gênes est facilement accessible en voiture ou en transports publics. Une excellente idée pour une journée à la découverte du centre historique, du Porto Antico, de l'Aquarium et des principales attractions de la ville.",
+    natureDintorniTitle: "🌿 Nature et environs",
+    natureDintorniText: "Si vous préférez la nature et la tranquillité, les environs offrent plusieurs destinations intéressantes pour les promenades, les randonnées et les excursions.",
+    naturePlaces: "🌲 Sassello — nature, promenades et produits locaux<br>🏘️ Ovada — centre historique, gastronomie et territoire du Monferrato<br>♨️ Acqui Terme — thermes, centre historique et détente",
+    liguriaTitle: "🇮🇹 Ligurie ou Piémont ?",
+    liguriaText: "L'un des grands atouts d'Aria di Campo est justement sa situation : en peu de temps, vous pouvez passer de l'arrière-pays ligure à la mer ou rejoindre le Piémont. Que vous ayez envie d'une journée à la plage, de visiter une ville, de vous promener dans la nature ou simplement de découvrir de petits villages, Campo Ligure est un excellent point de départ. ❤️",
+
+    servicesTitle: "🧭 Informations et services utiles",
+    supermarketsTitle: "🛒 Supermarchés / Épiceries",
+    bakeryTitle: "🥖 Boulangeries / Pâtisseries",
+    tobaccoTitle: "🚬 Tabac",
+    laundryTitle: "🧺 Laverie / Couture",
+    fuelTitle: "⛽ Station-service",
+    filigreeTitle: "💍 Filigrane",
+    healthTitle: "🏥 Santé et assistance",
+    pharmaciesTitle: "💊 Pharmacies",
+    communityTitle: "🏥 Maison de santé",
+    medicalGuardTitle: "🩺 Médecin de garde – Continuité des soins",
+    redCrossTitle: "🚑 Croix-Rouge italienne – Comité de Campo Ligure",
+    emergencyTitle: "🚨 Numéro d'urgence – 112",
+    emergencyText: "<strong>En cas d'urgence, appelez le 112.</strong>"
   }
 
-  function showSection(sectionId) {
+};
 
-    document.querySelectorAll(".section").forEach(function(section) {
-      section.classList.remove("active");
-    });
 
-    document.getElementById(sectionId).classList.add("active");
+function setLanguage(lang) {
 
-    document.querySelector(".menu-grid").style.display = "none";
-    document.querySelector(".menu-title").style.display = "none";
+  document.documentElement.lang = lang;
 
-    window.scrollTo(0, 0);
+  document.querySelectorAll("[data-i18n]").forEach(function(element) {
+
+    const key = element.getAttribute("data-i18n");
+
+    if (translations[lang] && translations[lang][key]) {
+      element.innerHTML = translations[lang][key];
+    }
+
+  });
+
+  document.querySelectorAll(".language").forEach(function(button) {
+    button.classList.remove("active");
+  });
+
+  const buttons = document.querySelectorAll(".language");
+
+  if (lang === "it") buttons[0].classList.add("active");
+  if (lang === "en") buttons[1].classList.add("active");
+  if (lang === "de") buttons[2].classList.add("active");
+  if (lang === "fr") buttons[3].classList.add("active");
+
+  localStorage.setItem("ariaDiCampoLanguage", lang);
+}
+
+
+function openGuide() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("guide").style.display = "block";
+  window.scrollTo(0, 0);
+}
+
+
+function showSection(sectionId) {
+
+  document.querySelectorAll(".section").forEach(function(section) {
+    section.classList.remove("active");
+  });
+
+  document.getElementById(sectionId).classList.add("active");
+
+  document.querySelector(".menu-grid").style.display = "none";
+  document.querySelector(".menu-title").style.display = "none";
+
+  window.scrollTo(0, 0);
+}
+
+
+function showMenu() {
+
+  document.querySelectorAll(".section").forEach(function(section) {
+    section.classList.remove("active");
+  });
+
+  document.querySelector(".menu-grid").style.display = "grid";
+  document.querySelector(".menu-title").style.display = "block";
+
+  window.scrollTo(0, 0);
+}
+
+
+window.addEventListener("DOMContentLoaded", function() {
+
+  const savedLanguage = localStorage.getItem("ariaDiCampoLanguage");
+
+  if (savedLanguage && translations[savedLanguage]) {
+    setLanguage(savedLanguage);
+  } else {
+    setLanguage("it");
   }
 
-  function showMenu() {
+});
 
-    document.querySelectorAll(".section").forEach(function(section) {
-      section.classList.remove("active");
-    });
+</script>
 
-    document.querySelector(".menu-grid").style.display = "grid";
-    document.querySelector(".menu-title").style.display = "block";
+</body>
+</html>
 
     window.scrollTo(0, 0);
   }
